@@ -88,3 +88,49 @@ void loop() {
 }
 ```
 ````
+
+## 3) Arduino Nano
+
+### 3.1 Imagen del microcontrolador utilizado
+
+En esta sección se presenta una fotografía del **Arduino Nano** empleado durante la práctica, con el objetivo de identificar claramente la tarjeta utilizada y sus principales componentes físicos.
+
+![Figura 3 — Arduino Nano](assets/img/01-publicar/ArduinoNano.jpeg)
+
+*Figura 3: Tarjeta Arduino Nano utilizada en la programación.*
+
+---
+
+### 3.2 Imagen de la configuración en la IDE de Arduino
+
+A continuación se muestra una captura de pantalla de la **IDE de Arduino**, donde se observa la selección del modelo de placa correspondiente al **Arduino Nano** y el puerto de comunicación.
+
+![Figura 4 — IDE Arduino Nano](assets/img/01-publicar/ArduinoNano.jpeg)
+
+*Figura 4: Configuración de placa y puerto para Arduino Nano.*
+
+---
+
+### 3.3 Video de funcionamiento
+
+En el siguiente enlace se puede visualizar el video del funcionamiento del Arduino Nano, donde se observa el parpadeo del LED integrado:
+
+[Ver video de funcionamiento del Arduino Nano](assets/videos/ArduinoNano.mp4)
+
+---
+
+### 3.4 Programa utilizado
+
+```arduino
+// blink_nano.ino
+void setup() {
+  pinMode(LED_BUILTIN, OUTPUT);
+}
+
+void loop() {
+  digitalWrite(LED_BUILTIN, HIGH);
+  delay(500);
+  digitalWrite(LED_BUILTIN, LOW);
+  delay(500);
+}
+```
