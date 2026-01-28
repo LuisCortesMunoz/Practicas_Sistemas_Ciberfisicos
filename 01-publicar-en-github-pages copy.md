@@ -27,24 +27,27 @@ Aquí se incluye una captura de pantalla de la configuración del entorno/intér
 ### 1.3 Video
 ```html
 <video controls width="720">
-  <source src="{{ '/assets/img/01-publicar/vESP32.mp4' | relative_url }}" type="video/mp4">
+  <source src="{{ 'assets/img/01-publicar/vESP32.mp4' | relative_url }}" type="video/mp4">
+  Tu navegador no soporta video HTML5.
 </video>
 ```
 
 ### 1.4 Programa
 A continuación se muestra el *código utilizado* para hacer parpadear el LED integrado. Este programa permite verificar que la placa fue detectada correctamente y que la carga/ejecución funciona como se espera.
-- **Programa:**
 
-  ```python
-  # blink_esp32_devkitv1.py
-  from machine import Pin
-  import time
 
-  LED = Pin(2, Pin.OUT)
+````md
+```python
+# blink_esp32_devkitv1.py
+from machine import Pin
+import time
 
-  while True:
-      LED.value(1)
-      time.sleep(0.5)
-      LED.value(0)
-      time.sleep(0.5)
+LED = Pin(2, Pin.OUT)
+
+while True:
+    LED.value(1)
+    time.sleep(0.5)
+    LED.value(0)
+    time.sleep(0.5)
 ```
+````
