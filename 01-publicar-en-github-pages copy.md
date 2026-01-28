@@ -65,7 +65,10 @@ Aquí se incluye una captura de pantalla de la configuración del intérprete ut
 *Figura 4:* Arduino IDE.
 
 ### 2.3 Video
-
+<video controls width="720">
+  <source src="{{ '/assets/videos/vArduinoUNO.mp4' | relative_url }}" type="video/mp4">
+  Tu navegador no soporta video HTML5.
+</video>
 
 ### 2.4 Programa
 A continuación se muestra el *código utilizado* para hacer parpadear el LED integrado en el arduino. Este programa permite verificar que la placa fue detectada correctamente y que la carga funciona como se espera.
