@@ -185,8 +185,6 @@ En el siguiente enlace se puede visualizar el video del funcionamiento del XIAO 
   Tu navegador no soporta video HTML5.
 </video>
 
----
-
 ### 2.5 Programa
 
 A continuación se muestra el *código utilizado* para hacer parpadear el LED. Este programa permite verificar que la placa fue detectada correctamente y que la carga/ejecución funciona como se espera.
