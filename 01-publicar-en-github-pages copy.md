@@ -21,7 +21,7 @@ En este apartado se muestra una fotografía del *ESP32 DevKit V1* que se utiliz�
 ### 1.2 Imagen de la configuración del intérprete
 Aquí se incluye una captura de pantalla de la configuración del entorno/intérprete utilizado (en este caso, **Thonny**), mostrando parámetros clave como el modelo de la placa, el puerto COM y la versión del intérprete.
 
-![Figura 2 — GitHub](assets/img/01-publicar/interpreteESP32.jpg)
+![Figura 2 — GitHub](assets/img/01-publicar/interpreteESP32.jpeg)
 *Figura 2:* Thonny Micropyhton.
 
 ### 1.3 Video
