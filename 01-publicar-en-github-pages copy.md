@@ -116,7 +116,7 @@ A continuación se muestra una captura de pantalla de la **IDE de Arduino**, don
 En el siguiente enlace se puede visualizar el video del funcionamiento del Arduino Nano, donde se observa el parpadeo del LED integrado:
 
 <video controls width="720">
-  <source src="{{ '/assets/videos/ArduinoNano.mp4' | relative_url }}" type="video/mp4">
+  <source src="{{ '/assets/videos/XIAO ESP32-S3.mp4' | relative_url }}" type="video/mp4">
   Tu navegador no soporta video HTML5.
 </video>
 
