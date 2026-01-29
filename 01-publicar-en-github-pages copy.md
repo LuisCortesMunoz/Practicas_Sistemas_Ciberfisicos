@@ -136,3 +136,66 @@ void loop() {
   delay(500);
 }
 ```
+## 2) XIAO ESP32-S3
+
+### 2.1 Imagen del micro utilizado
+
+En este apartado se muestra una fotografía del *XIAO ESP32-S3* que se utilizó, para identificar claramente el modelo y sus componentes principales (pines, puerto, etc.).
+
+![Figura 3 — GitHub](assets/img/01-publicar/XIAO%20ESP32-S3.jpeg)
+*Figura 3:* XIAO ESP32-S3.
+
+---
+
+### 2.2 Imagen de la configuración del intérprete
+
+Aquí se incluye una captura de pantalla de la configuración del entorno/intérprete utilizado (en este caso, **Thonny**), mostrando parámetros clave como el tipo de placa, el puerto COM y el intérprete seleccionado.
+
+![Figura 4 — GitHub](assets/img/01-publicar/interpreteXIAO%20ESP32-S3.jpeg)
+*Figura 4:* Thonny MicroPython (XIAO ESP32-S3).
+
+---
+
+### 2.3 Instalación de firmware (MicroPython)
+
+Para esta placa fue necesario instalar el firmware, ya que se programó en **MicroPython**. Primero se consultó la guía oficial de Seeed Studio, donde se indican los pasos y el firmware recomendado para la XIAO ESP32-S3:
+[Guía de Seeed Studio (XIAO ESP32S3 con MicroPython)](https://wiki.seeedstudio.com/xiao_esp32s3_with_micropython/)
+
+Dentro de esa página se indica el nombre del archivo a instalar, en este caso **ESP32_GENERIC_S3-20230602-v1.23.0.bin**. Después se dio clic en el enlace **“file from micropython.org”**, lo cual redirige a la página de descargas de MicroPython. Ya en esa página se buscó el archivo indicado y se descargó la versión **v1.23.0 (.bin)**.
+
+![Figura 5 — GitHub](assets/img/01-publicar/Firmware%20ESP32S3.png)
+*Figura 5:* Página de firmware donde se identifica la versión a descargar.
+
+Posteriormente se abrió **Thonny** y se configuró el intérprete seleccionando MicroPython para ESP32. Después se ingresó a la opción **“Instalar o actualizar MicroPython (esptool)”**, se verificó que se detectara correctamente el puerto donde estaba conectada la XIAO ESP32-S3, y se seleccionó la familia **ESP32-S3**. En la opción de *variant* no aparece directamente el modelo de la placa, por lo que se cargó el firmware descargado de forma local. Para esto se presionó el ícono de menú (tres líneas), se eligió **“Select local MicroPython image …”** y se seleccionó el archivo **.bin** previamente descargado. Una vez finalizada la instalación, la placa quedó lista para programarse desde Thonny sin problemas.
+
+![Figura 6 — GitHub](assets/img/01-publicar/Selectfirmware.png)
+*Figura 6:* Selección de firmware local en Thonny.
+
+![Figura 7 — GitHub](assets/img/01-publicar/firmware%20install.png)
+*Figura 7:* Proceso de escritura/instalación del firmware en Thonny.
+
+---
+
+### 2.4 Video
+
+[Ver video de funcionamiento de la XIAO ESP32-S3](assets/videos/vXIAO_ESP32S3.mp4)
+
+---
+
+### 2.5 Programa
+
+A continuación se muestra el *código utilizado* para hacer parpadear el LED. Este programa permite verificar que la placa fue detectada correctamente y que la carga/ejecución funciona como se espera.
+
+```python
+# blink_xiao_esp32s3.py
+from machine import Pin
+import time
+
+LED = Pin(21, Pin.OUT)  # activo-bajo
+
+while True:
+    LED.value(0)  # ON
+    time.sleep(0.5)
+    LED.value(1)  # OFF
+    time.sleep(0.5)
+```
