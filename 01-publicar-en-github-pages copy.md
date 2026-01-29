@@ -15,7 +15,7 @@ En esta parte, programamos diferentes microcontroladores con el objetivo de apre
 ### 1.1 Imagen del micro utilizado
 En este apartado se muestra una fotografía del *ESP32 DevKit V1* que se utilizó, para identificar claramente el modelo y sus componentes principales (pines, puerto, etc.).
 
-![Figura 1 — GitHub](assets/img/01-publicar/esp32wroom.jpeg)
+![Figura 1 — GitHub](assets/img/01-publicar/esp32wroom.jpg)
 *Figura 1:* ESP32 DevKit V1.
 
 ### 1.2 Imagen de la configuración del intérprete
