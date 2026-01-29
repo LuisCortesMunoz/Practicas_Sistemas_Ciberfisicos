@@ -10,4 +10,4 @@ Este repositorio será nuestra página del curso: aquí se documentan todas las 
 
 
 Contenido:
-- [1. Publicar en GitHub Pages](01-publicar-en-github-pages.md)
+- [1. Sistemas Embebidos](01-publicar-en-github-pages.md)
