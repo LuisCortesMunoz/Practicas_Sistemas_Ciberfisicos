@@ -1,6 +1,6 @@
 ---
 layout: default
-title: equipo de cómputo con presupuesto
+title: Equipo de cómputo con presupuesto
 nav_order: 2
 ---
 
