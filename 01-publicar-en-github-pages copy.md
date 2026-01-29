@@ -15,13 +15,13 @@ En esta parte, programamos diferentes microcontroladores con el objetivo de apre
 ### 1.1 Imagen del micro utilizado
 En este apartado se muestra una fotografía del *ESP32 DevKit V1* que se utilizó, para identificar claramente el modelo y sus componentes principales (pines, puerto, etc.).
 
-![Figura 1 — GitHub](assets/img/01-publicar/Esp32.jpeg)
+![Figura 1 — GitHub](assets/img/01-publicar/esp32wroom.jpeg)
 *Figura 1:* ESP32 DevKit V1.
 
 ### 1.2 Imagen de la configuración del intérprete
 Aquí se incluye una captura de pantalla de la configuración del entorno/intérprete utilizado (en este caso, **Thonny**), mostrando parámetros clave como el modelo de la placa, el puerto COM y la versión del intérprete.
 
-![Figura 2 — GitHub](assets/img/01-publicar/interpreteESP32.jpeg)
+![Figura 2 — GitHub](assets/img/01-publicar/interpreteESP32.jpg)
 *Figura 2:* Thonny Micropyhton.
 
 ### 1.3 Video
@@ -55,7 +55,7 @@ while True:
 ### 2.1 Imagen del micro utilizado
 En este apartado se muestra una fotografía del *Arduino UNO* que se utilizó, para identificar claramente el modelo y sus componentes principales (pines, puerto, etc.).
 
-![Figura 3 — GitHub](assets/img/01-publicar/ArduinoUNO.jpeg)
+![Figura 3 — GitHub](assets/img/01-publicar/Arduino.jpg)
 *Figura 3:* Arduino UNO.
 
 ### 2.2 Imagen de la configuración del intérprete
@@ -95,7 +95,7 @@ void loop() {
 
 En esta sección se presenta una fotografía del **Arduino Nano** empleado durante la práctica, con el objetivo de identificar claramente la tarjeta utilizada y sus principales componentes físicos.
 
-![Figura 3 — Arduino Nano](assets/img/01-publicar/ArduinoNano.jpeg)
+![Figura 3 — Arduino Nano](assets/img/01-publicar/ArduinoNano.jpg)
 
 *Figura 3: Tarjeta Arduino Nano utilizada en la programación.*
 
