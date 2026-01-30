@@ -29,5 +29,19 @@ El siguiente paso es crear un nuevo proyecto. Desde la misma ventana inicial (ve
 
 Una vez creado, el proyecto aparecerá en la barra lateral izquierda. Para comenzar con el diseño, haz clic en Esquemático, como se muestra en la Figura 2 (recuadro rojo).
 
-![Figura 1 — GitHub](assets/img/01-publicar/pcb_paso2.png)
+![Figura 2 — GitHub](assets/img/01-publicar/pcb_paso2.png)
 *Figura 2:* Creación de un nuevo proyecto.
+
+## 3) Búsqueda e inserción de componentes en el editor esquemático
+
+Como tercer paso, se mostrará una ventana similar a la de la Figura 3 (nota: al abrirla no se visualizarán los componentes como en la imagen de ejemplo). Para buscar e insertar diferentes componentes, utiliza la barra de herramientas del lado izquierdo. En la Figura 3 (flecha y recuadro rojo), debes dar clic en el icono “Place symbols (A)”.
+
+![Figura 3 — GitHub](assets/img/01-publicar/pcb_paso3.png)
+*Figura 3:* Barra de herramientas del editor esquemático y acceso a “Place symbols (A)”.
+
+Al seleccionarlo, se abrirá una ventana como la que se muestra en la Figura 4. Ahí podrás buscar el componente que necesitas. Al elegirlo, en el lado derecho (recuadro azul) se mostrará la vista previa del símbolo para verificar que sea el correcto. Cuando lo tengas identificado, presiona el botón “Aceptar” en la parte inferior.
+
+![Figura 4 — GitHub](assets/img/01-publicar/pcb_paso31.png)
+*Figura 4:* Ventana de selección de componentes: búsqueda y vista previa del símbolo.
+
+**Nota**: para este paso es importante que ya tengas definidos previamente los componentes que vas a utilizar.
