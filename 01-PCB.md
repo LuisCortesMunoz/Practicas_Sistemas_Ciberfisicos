@@ -6,7 +6,7 @@ nav_order: 2
 permalink: /sistemas-embebidos/practica-2/
 ---
 
-# Práctica 2: Diseño y elaboración de PCB.
+# Práctica 2: Diseño y elaboración de PCB
 
 En esta sección realizamos el diseño de una PCB en KiCAD y preparamos los archivos de fabricación en FabLab. Posteriormente, generamos el archivo de grabado (toolpaths) para poder maquinar la placa en una MonoFab SRM-20 Desktop Milling Machine, asegurando las dimensiones, el ruteo y la configuración correcta antes del fresado.
 
@@ -45,3 +45,14 @@ Al seleccionarlo, se abrirá una ventana como la que se muestra en la Figura 4. 
 *Figura 4:* Ventana de selección de componentes: búsqueda y vista previa del símbolo.
 
 **Nota**: para este paso es importante que ya tengas definidos previamente los componentes que vas a utilizar.
+
+## 4) Colocación de componentes, uso de etiquetas y conexión del circuito
+
+Luego de seleccionar el componente, podrás colocarlo en el esquemático como se muestra en la Figura 5 (recuadro rojo). Al hacer clic para posicionarlo, puedes repetir la colocación tantas veces como necesites. Para dejar de insertar componentes y volver al cursor normal, presiona la tecla Esc.
+
+Para mantener el diagrama más limpio y evitar demasiados cables cruzados, se recomienda usar etiquetas. Para ello, da clic en la herramienta **Label** indicada en la Figura 5 (flecha y recuadro azul) y coloca el nombre de la señal donde corresponda.
+
+Finalmente, para unir los componentes con cables, selecciona la herramienta de conexión (wire) y haz clic derecho en el punto de inicio (en la esquina o pin del componente). Después, mueve el cursor hasta el punto donde deseas conectar y vuelve a hacer clic derecho para realizar la unión.
+
+![Figura 5 — GitHub](assets/img/01-publicar/pcb_paso4.png)
+*Figura 5:* Colocación de componentes y herramienta de etiquetas (Label)
