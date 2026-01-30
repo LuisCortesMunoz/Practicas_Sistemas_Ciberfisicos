@@ -22,3 +22,12 @@ Primero, se debe descargar e instalar **KiCAD**. Al abrir el programa, se mostra
 
 ![Figura 1 — GitHub](assets/img/01-publicar/pcb_paso1.png)
 *Figura 1:* Pantalla inicial de configuración en el software KiCAD.
+
+## 2) Creación de un nuevo proyecto y acceso al editor esquemático en KiCAD
+
+El siguiente paso es crear un nuevo proyecto. Desde la misma ventana inicial (ver Figura 1), ve al menú Archivo y selecciona Nuevo proyecto. Después, guarda el proyecto en la ruta que prefieras.
+
+Una vez creado, el proyecto aparecerá en la barra lateral izquierda. Para comenzar con el diseño, haz clic en Esquemático, como se muestra en la Figura 2 (recuadro rojo).
+
+![Figura 1 — GitHub](assets/img/01-publicar/pcb_paso2.png)
+*Figura 2:* Creación de un nuevo proyecto.
