@@ -146,7 +146,7 @@ Precio: $3,249
 
 Link: <https://www.cyberpuerta.mx/Computo-Hardware/Monitores/Monitores/Monitor-Gamer-Curvo-MSI-G243CV-LCD-23-6-1920x1080-Full-HD-FreeSync-75Hz-HDMI-DisplayPort-Negro.html?gad_source=1&gad_campaignid=22512533880&gbraid=0AAAAAD4nXn3tcNz6vuV0DwbuL5JBr_G90&gclid=CjwKCAiA95fLBhBPEiwATXUsxBctVbyCNPg-smRvtyZ23YGS8-K2b_Eu1tcXMTBJzVDULR4qUxetXhoCfmcQAvD_BwE>
 
-![Figura 10 — GitHub](assets/img/01-publicar/monitor1.png)
+![Figura 10 — GitHub](assets/img/01-publicar/monitor1.jpg)
 
 *Figura 10:* Monitor Gamer Curvo MSI G243CV.
 
