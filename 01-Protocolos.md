@@ -86,4 +86,5 @@ Serial Peripheral Interface (SPI) es un protocolo de comunicación serie síncro
 En este apartado se muestra una fotografía de la conexión para el protocolo SPI entre una XIAO ESP32-S3 como maestro y como esclavo Arduino UNO.
 
 ![Figura 6 — GitHub](assets/img/01-publicar/conexiSPI.jpeg)
+
 *Figura 6:* Conexión física.
