@@ -56,3 +56,127 @@ Finalmente, para unir los componentes con cables, selecciona la herramienta de c
 
 ![Figura 5 — GitHub](assets/img/01-publicar/pcb_paso4.png)
 *Figura 5:* Colocación de componentes y herramienta de etiquetas (Label)
+Perfecto — aquí tienes **todo en Markdown limpio**, listo para copiar y pegar sin corregir nada y que compile bien:
+
+---
+
+## 5) Fabricación de la PCB mediante fresado CNC (Roland SRM-20)
+
+### 5.1 Herramienta y máquina utilizada
+
+Para la fabricación de la tarjeta de circuito impreso se utilizó una **fresadora CNC de 3 ejes monoFab Roland SRM-20**, la cual permite realizar trabajos de alta precisión sobre placas de cobre para prototipado electrónico.
+
+![Figura 6 — Fresadora CNC Roland SRM-20](assets/img/01-publicar/CNC.jpg)
+
+*Figura 6: Fresadora CNC Roland SRM-20 utilizada para el mecanizado del PCB.*
+
+Como herramientas de corte se emplearon dos brocas:
+
+* Una broca de **1 mm** para el grabado de pistas (devastado de cobre)
+* Una broca adicional para el **corte perimetral de la placa**
+
+Desde **KiCad** se exportaron dos archivos en formato **SVG**:
+
+* Un archivo correspondiente al **grabado de pistas**
+* Un archivo correspondiente al **corte o marco de la placa**
+
+---
+
+### 5.2 Acceso al entorno MODS
+
+Para generar las trayectorias de mecanizado se ingresó a la plataforma web:
+
+[https://hubergiron.github.io/cnc/mods/](https://hubergiron.github.io/cnc/mods/)
+
+Una vez dentro del entorno, se realizó un **clic izquierdo sobre el área de trabajo** para desplegar el menú principal.
+
+---
+
+### 5.3 Selección del programa de fresado
+
+Posteriormente se siguió la ruta:
+
+**programs → open program**
+
+donde se desplegó la lista de procesos disponibles. Dentro de esta se seleccionó:
+
+**SRM-20 mill → mill 2D PCB**
+
+correspondiente al flujo de trabajo específico para la fresadora Roland SRM-20 y fabricación de PCBs.
+
+![Figura 7 — Selección del programa en MODS](assets/img/01-publicar/fabmodul1.png)
+
+*Figura 7: Programa seleccionado para mecanizado de PCB.*
+
+---
+
+### 5.4 Carga de los archivos SVG
+
+Una vez cargado el programa, se localizó el módulo **read SVG**, donde se utilizó el botón **select SVG file** para importar:
+
+Primero el archivo del **grabado de pistas** y posteriormente el archivo correspondiente al **corte perimetral de la placa**.
+
+![Figura 8 — Carga del archivo SVG](assets/img/01-publicar/fabmodule2.png)
+
+*Figura 8: Importación del diseño del PCB en formato SVG.*
+
+---
+
+### 5.5 Configuración del mecanizado (mill raster 2D)
+
+Después de cargar el SVG del grabado, se configuraron los parámetros del módulo **mill raster 2D**, ajustándolos al diseño de pistas (0.8 mm), plano de tierra (1 mm) y herramienta utilizada.
+
+![Figura 9 — Parámetros de fresado en MODS](assets/img/01-publicar/fabmodul3.png)
+
+*Figura 9: Configuración de herramienta y profundidades de corte.*
+
+Parámetros utilizados:
+
+* Diámetro de herramienta: 1 mm
+* Profundidad por pasada: 0.1 mm
+* Profundidad máxima: 0.2 mm
+* Número de offsets: 4
+* Stepover: 0.5
+* Dirección de corte: climb milling
+
+---
+
+### 5.6 Definición del origen y desplazamientos de la máquina
+
+Posteriormente se configuró el módulo de control de la Roland SRM-20, donde se estableció el **origen de trabajo (X, Y, Z)**, que corresponde al punto físico desde el cual iniciará el fresado sobre la placa de cobre.
+
+![Figura 10 — Origen, jog height y home](assets/img/01-publicar/Fabmodul4.png)
+
+*Figura 10: Configuración de origen, altura de seguridad y posición home.*
+
+Estos parámetros permiten:
+
+* Alinear correctamente el diseño con el material
+* Definir una altura segura de desplazamiento
+* Regresar la máquina a una posición de reposo
+
+---
+
+### 5.7 Cálculo de trayectorias y generación del archivo CNC
+
+Una vez configurados los parámetros, se regresó al módulo **mill raster 2D** y se presionó el botón **calculate**, con lo cual MODS generó automáticamente las trayectorias de mecanizado.
+
+El sistema arrojó un archivo con extensión **.rml**, correspondiente al control de movimiento de la fresadora CNC.
+
+![Figura 11 — Generación de trayectorias](assets/img/01-publicar/fabmodul5.png)
+
+*Figura 11: Cálculo automático de rutas de corte.*
+
+![Figura 12 — Archivo generado](assets/img/01-publicar/fabmodul6.png)
+
+*Figura 12: Archivo .rml listo para fresado.*
+
+Este mismo procedimiento se repitió utilizando el SVG del **corte perimetral**, generando un segundo archivo **.rml** para el marco de la placa.
+
+---
+
+### 5.8 Envío del archivo a la fresadora CNC
+
+Finalmente, los archivos **.rml** generados (grabado y corte) se cargaron en el software **VPanel for SRM-20**, desde donde se ejecutaron los movimientos de la máquina para realizar físicamente el mecanizado del PCB.
+
+---
