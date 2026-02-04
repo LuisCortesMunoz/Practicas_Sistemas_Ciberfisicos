@@ -51,7 +51,7 @@ En el esclavo se recibe la trama, se verifica el checksum y, si es válida, se r
 
 
 ````md
-```Arduino UNO
+```C++
 const uint8_t START_BYTE = 0xA5;
 
 uint8_t checksum5(const uint8_t *p) {
