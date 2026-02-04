@@ -30,6 +30,7 @@ Se ocupo un total de $24,483
 - Socket AM5  
 
 Precio: $5,899
+
 Link: <https://ddtech.mx/producto/procesador-amd-ryzen-7-7700-5-3-ghz-8-nucleos-socket-am5-amd-radeon-graphics-100-100000592box-7000-series?id=12368>
 
 ![Figura 1 — GitHub](assets/img/01-publicar/Procesador1.jpg)
