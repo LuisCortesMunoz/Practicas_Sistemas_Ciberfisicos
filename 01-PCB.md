@@ -172,8 +172,21 @@ Este mismo procedimiento se repitió utilizando el SVG del **corte perimetral**,
 
 ---
 
-### 5.8 Envío del archivo a la fresadora CNC
+### 5.8 Envío del archivo a la fresadora CNC mediante VPanel for SRM-20
 
-Finalmente, los archivos **.rml** generados (grabado y corte) se cargaron en el software **VPanel for SRM-20**, desde donde se ejecutaron los movimientos de la máquina para realizar físicamente el mecanizado del PCB.
+Una vez generados los archivos **.rml** en MODS, estos se cargaron en el software **VPanel for SRM-20**, el cual permite controlar directamente la fresadora CNC y ejecutar las trayectorias de mecanizado.
 
----
+![Figura 12 — Interfaz de VPanel for SRM-20](assets/img/01-publicar/appFresa.jpg)
+
+*Figura 12: Software VPanel utilizado para el control de la fresadora Roland SRM-20.*
+
+Dentro de este entorno se realizó primero la **definición del origen en el eje Z**, ajustando la altura de la herramienta hasta tocar suavemente la superficie de la placa de cobre. Este paso es fundamental para asegurar que la profundidad de corte sea correcta y evitar dañar el material o la herramienta.
+
+Posteriormente se configuró el **origen en los ejes X y Y**, posicionando la broca en una esquina o punto de referencia de la placa, de acuerdo con la ubicación física del material sobre la cama de la máquina.
+
+Es importante mencionar que estos orígenes se establecen **dependiendo de la herramienta utilizada** y deben reajustarse cada vez que se realiza un cambio de broca.
+
+Una vez definidos los orígenes, se presionó el botón **Cut**, lo cual abrió una ventana para seleccionar el archivo con extensión **.rml** previamente generado en MODS. Después de cargar el archivo correspondiente al grabado o al corte, se presionó la opción **Output**, iniciando así el proceso automático de fresado del circuito.
+
+Este mismo procedimiento se repitió tanto para el archivo del **grabado de pistas** como para el archivo del **corte perimetral de la placa**.
+
