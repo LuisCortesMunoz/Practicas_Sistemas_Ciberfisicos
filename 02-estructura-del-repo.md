@@ -62,3 +62,54 @@ Link: <https://www.xtremepc.com.mx/products/memoria-ram-xtreme-pc-gaming-kingsto
 
 ![Figura 3 — GitHub](assets/img/01-publicar/ram1.png)
 *Figura 3:* Memoria RAM XTREME PC GAMING KINGSTON.
+
+### 2.4) Tarjeta gráfica MSI Gaming RTX 5060
+- NVIDIA GeForce RTX 5060
+- RAM 8GB para gráfico 
+- Frecuencia 2535 MHz
+
+Precio: $6,635
+
+Link: <https://www.amazon.com.mx/MSI-Tarjeta-gr%C3%A1fica-Rendimiento-Extremo/dp/B0F4LP8VH5/ref=asc_df_B0F4LP8VH5?mcid=70c017d3b5193cbdbc5a8acd28112c65&tag=gledskshopmx-20&linkCode=df0&hvadid=745054174681&hvpos=&hvnetw=g&hvrand=1722777082906757481&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9196927&hvtargid=pla-2616278449112&psc=1&language=es_MX&gad_source=1>
+
+![Figura 4 — GitHub](assets/img/01-publicar/tarjetaGrafica1.jpg)
+*Figura 4:* Tarjeta gráfica MSI Gaming RTX 5060.
+
+### 2.5) Mouse Inalámbrico Ergonómico
+- 6 DPIs
+- Frecuencia 2.4 GHz
+
+Precio: $229
+
+Link: <https://www.amazon.com.mx/Inal%C3%A1mbrico-Ergon%C3%B3mico-Recargable-Ajustables-Ergonomico/dp/B0CSN8P8G2/ref=asc_df_B0CSN8P8G2?mcid=e4305f20055632e98b78b4a1716084d9&tag=gledskshopmx-20&linkCode=df0&hvadid=709966298345&hvpos=&hvnetw=g&hvrand=10906713632831497011&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9131460&hvtargid=pla-2297582641595&language=es_MX&gad_source=1&th=1>
+
+![Figura 5 — GitHub](assets/img/01-publicar/mouse1.jpg)
+*Figura 5:* Mouse Inalámbrico Ergonómico.
+
+### 2.6) Teclado Logitech K120 
+- USB
+
+Precio: $208
+
+Link: <https://intercompras.com/p/teclado-logitech-k120-usb-negro-63377?srsltid=AfmBOopDQu_jOzifyBayn2VPSs-Qr4LGMM6QxlDLFagjRO0iiOQbAcEbCPo>
+
+![Figura 6 — GitHub](assets/img/01-publicar/teclado1.jpg)
+*Figura 6:* Teclado Logitech K120 .
+
+### 2.7) Fuente de poder MSI MAG A650BN
+- Potencia total 650 W
+- Eficiencia 80 plus 
+- Ventilador 120mm
+
+Precio: $999
+
+Link: <https://coregaming.com.mx/producto/fuente-de-poder-msi-mag-a650bn-80-plus-bronze-24-pin-atx-120mm-no-modular-650w-mag-a650bn>
+
+![Figura 7 — GitHub](assets/img/01-publicar/fuente1.png)
+*Figura 7:* Teclado Logitech K120 .
+
+### 2.8) Gabinete DeepCool CC360 ARGB
+
+### 2.9) Almacenamiento Unidad SSD KINGSTONG NV2
+
+### 2.10) Monitor Gamer Curvo MSI G243CV
