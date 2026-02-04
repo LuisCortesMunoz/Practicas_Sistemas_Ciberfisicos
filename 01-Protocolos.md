@@ -12,6 +12,8 @@ En esta sección se realizó la implementación y evaluación de los protocolos 
 
 ## 1) Serial (UART)
 
+UART (universal asynchronous receiver / transmitter, por sus siglas en inglés) se define como un protocolo para el intercambio de datos en serie entre dos dispositivos. UART utiliza solo dos hilos entre el transmisor y el receptor para transmitir y recibir en ambas direcciones. Ambos extremos tienen una conexión a masa. La comunicación en UART puede ser simplex(los datos se envían en una sola dirección), semidúplex(cada extremo se comunica, pero solo uno al mismo tiempo), o dúplex completo(ambos extremos pueden transmitir simultáneamente).
+
 ### 1.1 Imagen del microontrolador utilizados
 
 En este apartado se muestra una fotografía de los pines de la *XIAO ESP32-S3 y Arduino UNO*, con el propósito de identificar de manera clara las conexiones utilizadas para el protocolo de comunicación empleado en la práctica.
@@ -77,3 +79,12 @@ En la Figura 5 se muestra la gráfica de latencia obtenida durante el envío de 
 *Figura 5:* Gráfica de latencia UART.
 ---
 
+## 2) Interfaz periférica en serie (SPI) 
+Serial Peripheral Interface (SPI) es un protocolo de comunicación serie síncrono utilizado para permitir el intercambio de datos a alta velocidad entre un dispositivo maestro y varios dispositivos periféricos. Se trata de un sistema de comunicación full-duplex diseñado para transferir datos de forma rápida y eficaz en distancias cortas.
+
+### 2.1 Imagen de conexíon entre microontroladores 
+
+En este apartado se muestra una fotografía de la conexión para el protocolo SPI entre una XIAO ESP32-S3 como maestro y como esclavo Arduino UNO.
+
+![Figura 6 — GitHub](assets/img/01-publicar/conexiSPI.jpeg)
+*Figura 6:* Conexión física.
