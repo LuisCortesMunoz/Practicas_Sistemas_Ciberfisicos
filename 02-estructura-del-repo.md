@@ -242,7 +242,7 @@ Link: <https://www.mercadolibre.com.mx/fuente-de-poder-corsair-rm1000e-80-plus-t
 *Figura 17:* Fuente de poder Corsair Rm1000e 80 Plus Titanium Modular Atx Negro.
 
 ### 3.8) Gabinete ENTHOO ELITE
-- Dimensiones 270 x 750 x 615 mm | 10.6 x 29.5 x 24.2 in
+- Dimensiones 270 x 750 x 615 mm / 10.6 x 29.5 x 24.2 in
 
 Precio: $4,601
 
