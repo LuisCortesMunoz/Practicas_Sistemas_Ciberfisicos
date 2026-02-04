@@ -73,6 +73,7 @@ Precio: $6,635
 Link: <https://www.amazon.com.mx/MSI-Tarjeta-gr%C3%A1fica-Rendimiento-Extremo/dp/B0F4LP8VH5/ref=asc_df_B0F4LP8VH5?mcid=70c017d3b5193cbdbc5a8acd28112c65&tag=gledskshopmx-20&linkCode=df0&hvadid=745054174681&hvpos=&hvnetw=g&hvrand=1722777082906757481&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9196927&hvtargid=pla-2616278449112&psc=1&language=es_MX&gad_source=1>
 
 ![Figura 4 — GitHub](assets/img/01-publicar/tarjetaGrafica1.jpg)
+
 *Figura 4:* Tarjeta gráfica MSI Gaming RTX 5060.
 
 ### 2.5) Mouse Inalámbrico Ergonómico
@@ -84,6 +85,7 @@ Precio: $229
 Link: <https://www.amazon.com.mx/Inal%C3%A1mbrico-Ergon%C3%B3mico-Recargable-Ajustables-Ergonomico/dp/B0CSN8P8G2/ref=asc_df_B0CSN8P8G2?mcid=e4305f20055632e98b78b4a1716084d9&tag=gledskshopmx-20&linkCode=df0&hvadid=709966298345&hvpos=&hvnetw=g&hvrand=10906713632831497011&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9131460&hvtargid=pla-2297582641595&language=es_MX&gad_source=1&th=1>
 
 ![Figura 5 — GitHub](assets/img/01-publicar/mouse1.jpg)
+
 *Figura 5:* Mouse Inalámbrico Ergonómico.
 
 ### 2.6) Teclado Logitech K120 
@@ -94,7 +96,8 @@ Precio: $208
 Link: <https://intercompras.com/p/teclado-logitech-k120-usb-negro-63377?srsltid=AfmBOopDQu_jOzifyBayn2VPSs-Qr4LGMM6QxlDLFagjRO0iiOQbAcEbCPo>
 
 ![Figura 6 — GitHub](assets/img/01-publicar/teclado1.jpg)
-*Figura 6:* Teclado Logitech K120 .
+
+*Figura 6:* Teclado Logitech K120.
 
 ### 2.7) Fuente de poder MSI MAG A650BN
 - Potencia total 650 W
@@ -106,10 +109,45 @@ Precio: $999
 Link: <https://coregaming.com.mx/producto/fuente-de-poder-msi-mag-a650bn-80-plus-bronze-24-pin-atx-120mm-no-modular-650w-mag-a650bn>
 
 ![Figura 7 — GitHub](assets/img/01-publicar/fuente1.png)
-*Figura 7:* Teclado Logitech K120 .
+
+*Figura 7:* Fuente de poder MSI MAG A650BN.
 
 ### 2.8) Gabinete DeepCool CC360 ARGB
+- Potencia total 650 W
+- Eficiencia 80 plus 
+- Ventilador 120mm
+
+Precio: $999
+
+Link: <https://www.cyberpuerta.mx/Computo-Hardware/Componentes/Gabinetes/Gabinete-DeepCool-CC360-ARGB-Micro-Tower-Micro-ATX-Mini-ITX-USB-2-0-3-0-sin-Fuente-3-Ventiladores-Instalados-Negro.html>
+
+![Figura 8 — GitHub](assets/img/01-publicar/gabinete1.jpg)
+
+*Figura 8:* Gabinete DeepCool CC360 ARGB.
 
 ### 2.9) Almacenamiento Unidad SSD KINGSTONG NV2
+- Capacidad 1 TB
+- Interfaces de conexión: PCIe Gen 4.0 x4 y NVMe.
+
+Precio: $2,650
+
+Link: <https://www.mercadolibre.com.mx/unidad-ssd-kingston-nv2-1tb-m2-nvme-40-3500mb-2100mbs-color-turquesa/p/MLM19738268?pdp_filters=item_id%3AMLM2716408459&from=gshop&matt_tool=22537694&matt_word=&matt_source=google&matt_campaign_id=22122739109&matt_ad_group_id=172792511425&matt_match_type=&matt_network=g&matt_device=c&matt_creative=729726340073&matt_keyword=&matt_ad_position=&matt_ad_type=pla&matt_merchant_id=735123306&matt_product_id=MLM19738268-product&matt_product_partition_id=2389849485285&matt_target_id=aud-2418605323168:pla-2389849485285&cq_src=google_ads&cq_cmp=22122739109&cq_net=g&cq_plt=gp&cq_med=pla&gad_source=1&gad_campaignid=22122739109&gbraid=0AAAAAoTLPrI4Qv1aItsKIqSVYr1WRig3m&gclid=CjwKCAiA1obMBhAbEiwAsUBbIrTh33K7MhgUVZmeV57MA6nZn0Yv4Nbo8RrNrlFsbBGf79Cq88359RoCC9YQAvD_BwE>
+
+![Figura 9 — GitHub](assets/img/01-publicar/almacenamiento1.png)
+
+*Figura 9:* Almacenamiento Unidad SSD KINGSTONG NV2.
 
 ### 2.10) Monitor Gamer Curvo MSI G243CV
+- Pantalla 23.6"
+- Resolución 1920x1080 Full HD
+- 75Hz
+
+Precio: $3,249
+
+Link: <https://www.cyberpuerta.mx/Computo-Hardware/Monitores/Monitores/Monitor-Gamer-Curvo-MSI-G243CV-LCD-23-6-1920x1080-Full-HD-FreeSync-75Hz-HDMI-DisplayPort-Negro.html?gad_source=1&gad_campaignid=22512533880&gbraid=0AAAAAD4nXn3tcNz6vuV0DwbuL5JBr_G90&gclid=CjwKCAiA95fLBhBPEiwATXUsxBctVbyCNPg-smRvtyZ23YGS8-K2b_Eu1tcXMTBJzVDULR4qUxetXhoCfmcQAvD_BwE>
+
+![Figura 10 — GitHub](assets/img/01-publicar/monitor1.png)
+
+*Figura 10:* Monitor Gamer Curvo MSI G243CV.
+
+## 3) Propuesta sin límite 
