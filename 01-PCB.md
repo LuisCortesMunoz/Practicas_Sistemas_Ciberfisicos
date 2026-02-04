@@ -17,7 +17,7 @@ Primero, se debe descargar e instalar **KiCAD**. Al abrir el programa, se mostra
 1. Haz clic en Gestor de complementos.  
 2. En la ventana que aparece, selecciona la pestaña Instalados (en la parte superior).  
 3. Busca e instala el complemento KiCAD FabLab.  
-4. Finalmente, presiona el botón Actualizar** para aplicar los cambios y, al terminar, cierra la ventana del gestor.
+4. Finalmente, presiona el botón Actualizar para aplicar los cambios y, al terminar, cierra la ventana del gestor.
 
 
 ![Figura 1 — GitHub](assets/img/01-publicar/pcb_paso1.png)
@@ -56,19 +56,50 @@ Finalmente, para unir los componentes con cables, selecciona la herramienta de c
 
 ![Figura 5 — GitHub](assets/img/01-publicar/pcb_paso4.png)
 *Figura 5:* Colocación de componentes y herramienta de etiquetas (Label)
-Perfecto — aquí tienes **todo en Markdown limpio**, listo para copiar y pegar sin corregir nada y que compile bien:
+
+## 5) Cambio al editor de placas y actualización de componentes en la PCB
+
+Ahora, para comenzar con el ruteo de pistas, es necesario cambiar al editor de placas. Para hacerlo, ve a Herramientas y selecciona Cambiar a editor de placas, como se muestra en la Figura 6. Esto te redirigirá al editor de PCB.
+
+![Figura 6 — GitHub](assets/img/01-publicar/pcb_paso5.png)
+*Figura 6:* Opción “Cambiar a editor de placas” desde el menú Herramientas
+
+Es normal que, al entrar, no aparezcan los componentes de inmediato. En ese caso, debes ir nuevamente a Herramientas y seleccionar Actualizar placa desde esquema, como se muestra en la Figura 7. En la ventana que se despliega, da clic en Actualizar placa. Con esto se cargarán y visualizarán los componentes que colocaste previamente en el esquemático.
+
+![Figura 7 — GitHub](assets/img/01-publicar/pcb_paso51.png)
+*Figura 7:* Actualización de la PCB para visualizar los componentes importados desde el esquemático
+
+## 6) Enrutado de pistas y definición del ancho en el editor de PCB
+
+Al completar el paso anterior, la placa se mostrará como en la Figura 8: con los componentes ya visibles, pero aún sin las pistas. (Nota: la imagen de referencia puede mostrar el resultado final, en esta etapa todavía no se han trazado las conexiones).
+
+Una vez que acomodes los componentes de la manera que mejor convenga, puedes comenzar a dibujar las pistas utilizando la herramienta de enrutado (Route tracks), que se ve en el recuadro rojo de la Figura 8. Se recomienda trabajar con un ancho de pista de 0.8 mm a 1.0 mm para facilitar el fresado y asegurar una buena conectividad.
+
+Para definir el tamaño de la pista, selecciona el menú de del recuadro azul en la Figura 8 y elige "Editar valores predefinidos".
+
+![Figura 8 — GitHub](assets/img/01-publicar/pcb_paso6.png)
+*Figura 8:* Editor de PCB: ubicación de la herramienta de enrutado y selección del ancho de pista
+
+Se desplegará una ventana como la que se muestra en la Figura 9. Ahí podrás agregar los valores de ancho de pista que desees utilizar. Para añadir un nuevo valor, da clic en el símbolo “+” en la parte inferior y escribe el ancho correspondiente (por ejemplo, 0.8 mm o 1.0 mm).
+
+Una vez que agregues los valores necesarios, presiona Aceptar. Con esto, ya podrás comenzar a enrutar las pistas, selecciona el punto de inicio y arrastra el mouse hasta el punto final, de forma similar al proceso de conexión descrito en el Paso 4.
+
+![Figura 9 — GitHub](assets/img/01-publicar/pcb_paso61.png)
+*Figura 9:* Ventana para agregar y seleccionar anchos de pista en KiCAD
+
+## 7) 
 
 ---
 
-## 5) Fabricación de la PCB mediante fresado CNC (Roland SRM-20)
+## 8) Fabricación de la PCB mediante fresado CNC (Roland SRM-20)
 
-### 5.1 Herramienta y máquina utilizada
+### 8.1 Herramienta y máquina utilizada
 
 Para la fabricación de la tarjeta de circuito impreso se utilizó una **fresadora CNC de 3 ejes monoFab Roland SRM-20**, la cual permite realizar trabajos de alta precisión sobre placas de cobre para prototipado electrónico.
 
-![Figura 6 — Fresadora CNC Roland SRM-20](assets/img/01-publicar/CNC.jpg)
+![Figura 11 — Fresadora CNC Roland SRM-20](assets/img/01-publicar/CNC.jpg)
 
-*Figura 6: Fresadora CNC Roland SRM-20 utilizada para el mecanizado del PCB.*
+*Figura 11: Fresadora CNC Roland SRM-20 utilizada para el mecanizado del PCB.*
 
 Como herramientas de corte se emplearon dos brocas:
 
@@ -82,7 +113,7 @@ Desde **KiCad** se exportaron dos archivos en formato **SVG**:
 
 ---
 
-### 5.2 Acceso al entorno MODS
+### 8.2 Acceso al entorno MODS
 
 Para generar las trayectorias de mecanizado se ingresó a la plataforma web:
 
@@ -92,7 +123,7 @@ Una vez dentro del entorno, se realizó un **clic izquierdo sobre el área de tr
 
 ---
 
-### 5.3 Selección del programa de fresado
+### 8.3 Selección del programa de fresado
 
 Posteriormente se siguió la ruta:
 
@@ -104,31 +135,31 @@ donde se desplegó la lista de procesos disponibles. Dentro de esta se seleccion
 
 correspondiente al flujo de trabajo específico para la fresadora Roland SRM-20 y fabricación de PCBs.
 
-![Figura 7 — Selección del programa en MODS](assets/img/01-publicar/fabmodul3.png)
+![Figura 12 — Selección del programa en MODS](assets/img/01-publicar/fabmodul3.png)
 
-*Figura 7: Programa seleccionado para mecanizado de PCB.*
+*Figura 12: Programa seleccionado para mecanizado de PCB.*
 
 ---
 
-### 5.4 Carga de los archivos SVG
+### 8.4 Carga de los archivos SVG
 
 Una vez cargado el programa, se localizó el módulo **read SVG**, donde se utilizó el botón **select SVG file** para importar:
 
 Primero el archivo del **grabado de pistas** y posteriormente el archivo correspondiente al **corte perimetral de la placa**.
 
-![Figura 8 — Carga del archivo SVG](assets/img/01-publicar/Fabmodul4.png)
+![Figura 13 — Carga del archivo SVG](assets/img/01-publicar/Fabmodul4.png)
 
-*Figura 8: Importación del diseño del PCB en formato SVG.*
+*Figura 13: Importación del diseño del PCB en formato SVG.*
 
 ---
 
-### 5.5 Configuración del mecanizado (mill raster 2D)
+### 8.5 Configuración del mecanizado (mill raster 2D)
 
 Después de cargar el SVG del grabado, se configuraron los parámetros del módulo **mill raster 2D**, ajustándolos al diseño de pistas (0.8 mm), plano de tierra (1 mm) y herramienta utilizada.
 
-![Figura 9 — Parámetros de fresado en MODS](assets/img/01-publicar/fabmodul5.png)
+![Figura 14 — Parámetros de fresado en MODS](assets/img/01-publicar/fabmodul5.png)
 
-*Figura 9: Configuración de herramienta y profundidades de corte.*
+*Figura 14: Configuración de herramienta y profundidades de corte.*
 
 Parámetros utilizados:
 
@@ -141,13 +172,13 @@ Parámetros utilizados:
 
 ---
 
-### 5.6 Definición del origen y desplazamientos de la máquina
+### 8.6 Definición del origen y desplazamientos de la máquina
 
 Posteriormente se configuró el módulo de control de la Roland SRM-20, donde se estableció el **origen de trabajo (X, Y, Z)**, que corresponde al punto físico desde el cual iniciará el fresado sobre la placa de cobre.
 
-![Figura 10 — Origen, jog height y home](assets/img/01-publicar/fabmodul6.png)
+![Figura 15 — Origen, jog height y home](assets/img/01-publicar/fabmodul6.png)
 
-*Figura 10: Configuración de origen, altura de seguridad y posición home.*
+*Figura 15: Configuración de origen, altura de seguridad y posición home.*
 
 Estos parámetros permiten:
 
@@ -157,28 +188,28 @@ Estos parámetros permiten:
 
 ---
 
-### 5.7 Cálculo de trayectorias y generación del archivo CNC
+### 8.7 Cálculo de trayectorias y generación del archivo CNC
 
 Una vez configurados los parámetros, se regresó al módulo **mill raster 2D** y se presionó el botón **calculate**, con lo cual MODS generó automáticamente las trayectorias de mecanizado.
 
 El sistema arrojó un archivo con extensión **.rml**, correspondiente al control de movimiento de la fresadora CNC.
 
-![Figura 11 — Generación de trayectorias](assets/img/01-publicar/srm.png)
+![Figura 16 — Generación de trayectorias](assets/img/01-publicar/srm.png)
 
-*Figura 11: Cálculo automático de rutas de corte.*
+*Figura 16: Cálculo automático de rutas de corte.*
 
 
 Este mismo procedimiento se repitió utilizando el SVG del **corte perimetral**, generando un segundo archivo **.rml** para el marco de la placa.
 
 ---
 
-### 5.8 Envío del archivo a la fresadora CNC mediante VPanel for SRM-20
+### 8.8 Envío del archivo a la fresadora CNC mediante VPanel for SRM-20
 
 Una vez generados los archivos **.rml** en MODS, estos se cargaron en el software **VPanel for SRM-20**, el cual permite controlar directamente la fresadora CNC y ejecutar las trayectorias de mecanizado.
 
-![Figura 12 — Interfaz de VPanel for SRM-20](assets/img/01-publicar/appFresa.jpg)
+![Figura 17 — Interfaz de VPanel for SRM-20](assets/img/01-publicar/appFresa.jpg)
 
-*Figura 12: Software VPanel utilizado para el control de la fresadora Roland SRM-20.*
+*Figura 17: Software VPanel utilizado para el control de la fresadora Roland SRM-20.*
 
 Dentro de este entorno se realizó primero la **definición del origen en el eje Z**, ajustando la altura de la herramienta hasta tocar suavemente la superficie de la placa de cobre. Este paso es fundamental para asegurar que la profundidad de corte sea correcta y evitar dañar el material o la herramienta.
 
