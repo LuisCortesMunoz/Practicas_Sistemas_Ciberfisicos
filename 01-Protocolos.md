@@ -88,3 +88,42 @@ En este apartado se muestra una fotografía de la conexión para el protocolo SP
 ![Figura 6 — GitHub](assets/img/01-publicar/conexiSPI.jpeg)
 
 *Figura 6:* Conexión física.
+
+### 2.2 Implementación del protocolo SPI
+
+Para la medición de latencia se configuró el XIAO ESP32-S3 como dispositivo maestro SPI, encargado de enviar tramas de datos y medir el tiempo de cada transferencia. El Arduino UNO operó como dispositivo esclavo utilizando interrupciones para recibir los datos y devolver un eco de la información recibida, validando así la comunicación.
+
+En el maestro se realizó la transferencia SPI completa y se midió el tiempo transcurrido en microsegundos:
+
+
+````md
+```Micro python
+rx = xfer8(tx)
+dt_sec = time.ticks_diff(t1, t0) / 1_000_000.0
+```
+````
+
+Este fragmento permite calcular la latencia de cada transacción SPI desde el envío hasta la recepción del eco.
+
+Por otro lado, en el esclavo se utilizó una máquina de estados basada en interrupciones para capturar los primeros bytes de la trama:
+
+````md
+```C++
+if (byte_count < 4) {
+    rx_seq[byte_count] = inByte;
+}
+```
+````
+
+Posteriormente, los datos recibidos se enviaron de vuelta al maestro durante los siguientes ciclos de reloj SPI, funcionando como confirmación de recepción.
+
+La información generada fue almacenada en un archivo CSV y empleada para la generación de las gráficas de desempeño del protocolo SPI.
+
+### 2.3 Resultados de latencia SPI
+
+En la Figura 7 se presenta la gráfica de latencia obtenida mediante el protocolo SPI durante el envío de 1000 transacciones entre el XIAO ESP32-S3 (maestro) y el Arduino UNO (esclavo). Cada punto representa el tiempo requerido para completar una transferencia completa de datos, mientras que las líneas punteadas indican el valor promedio y una desviación estándar. Se observa una latencia promedio aproximada de 8.14 ms con variaciones mínimas, lo que evidencia un comportamiento estable y determinístico característico de los protocolos síncronos como SPI.
+
+![Figura 7 — GitHub](assets/img/resultados/grafSPI.jpeg)
+*Figura 7:* Gráfica de latencia SPI.
+
+
