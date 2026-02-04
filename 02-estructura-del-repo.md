@@ -151,3 +151,130 @@ Link: <https://www.cyberpuerta.mx/Computo-Hardware/Monitores/Monitores/Monitor-G
 *Figura 10:* Monitor Gamer Curvo MSI G243CV.
 
 ## 3) Propuesta sin límite 
+
+### 3.1) Procesador AMD Ryzen 9 9950X3D
+- Modelo de CPU Ryzen 9
+- Velocidad de CPU 4,3 GHz
+- Enchufe de CPU Socket AM5
+
+Precio: $14,574
+
+Link: <https://www.amazon.com.mx/AMD-Ryzen-9950X3D-Procesador-100-100000719WOF/dp/B0DVZSG8D5/ref=asc_df_B0DVZSG8D5?mcid=22c845a40e18394fbc72cfb43127ca24&tag=gledskshopmx-20&linkCode=df0&hvadid=730033385251&hvpos=&hvnetw=g&hvrand=17874551098524341697&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9196927&hvtargid=pla-2408213641585&psc=1&language=es_MX&gad_source=1>
+
+![Figura 11 — GitHub](assets/img/01-publicar/procesador2.jpg)
+
+*Figura 11:* Procesador AMD Ryzen 9 9950X3D.
+
+### 3.2) Tarjeta Madre ASUS ROG Crosshair X870E 
+- Modelo de CPU Ryzen 7
+- Velocidad de 4000 MHz
+- Enchufe de CPU Socket AM5
+- Tecnología DDR5
+
+Precio: $15,227
+
+Link: <https://www.amazon.com.mx/ASUS-ROG-Crosshair-X870E-Ventilador/dp/B0F25LTGBN/ref=asc_df_B0F25LTGBN?mcid=3e241b9369a83d96aaa012c153e5ec21&tag=gledskshopmx-20&linkCode=df0&hvadid=782828334665&hvpos=&hvnetw=g&hvrand=4005715194923192889&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9196927&hvtargid=pla-2431810329829&language=es_MX&gad_source=1&th=1>
+
+![Figura 12 — GitHub](assets/img/01-publicar/tarjeta2.jpg)
+
+*Figura 12:* Tarjeta Madre ASUS ROG Crosshair X870E.
+
+### 3.3) RAM predator memoria ddr5 predator hermes
+- Velocidad de 6400 MHz
+- Memoria interna DDR5 64GB
+
+Precio: $5,697
+
+Link: <https://www.sears.com.mx/producto/3796806/predator-memoria-ddr5-predator-hermes-64gb-2x32-6400mhz-cl32-bco-bl-9bwwr-423?gad_source=1&gad_campaignid=23090003227&gbraid=0AAAAADLldArxXcV5mWiCwJGDad7vOE8PV&gclid=CjwKCAiA95fLBhBPEiwATXUsxBan-yBFntd3Uqv4Ro-HIxgqHuZ8aACoX3PllX3fuxNT1iBB5HVz7hoCNVIQAvD_BwE>
+
+![Figura 13 — GitHub](assets/img/01-publicar/RAM2.jpg)
+
+*Figura 13:* RAM predator memoria ddr5 predator hermes.
+
+### 3.4) Tarjeta Gráfica NVIDIA GeForce RTX 5090 de 32GB GDDR7 
+- GDDR7
+- 32 GB
+- 7680 x 4320 Pixeles 512 Bit 28 Gbit/s PCI Express 5.0
+- Número de puertos HDMI: 2 Cantidad de DisplayPorts: 3
+
+Precio: $28,369
+
+Link: <https://intercompras.com/p/tarjeta-video-asus-tuf-gaming-geforce-rtx-32gb-bit-pci-e-gddr7-hdmi-415717?gad_source=1&gad_campaignid=1711130332&gbraid=0AAAAAD_EkoHvCZWztbbQuL5JBl8Ngd5Jl&gclid=CjwKCAiA1obMBhAbEiwAsUBbIgD96ozbD4gGsMLh4pENPa3RWRw5QJQ4OtD80c0klR1dngPXFeno5RoCQkgQAvD_BwE>
+
+![Figura 14 — GitHub](assets/img/01-publicar/tarjetaGrafica2.jpg)
+
+*Figura 14:* Tarjeta Gráfica NVIDIA GeForce RTX 5090 de 32GB GDDR7 .
+
+### 3.5) Mouse Logitech G Pro 2 Lightspeed Mouse inalámbrico 
+- 4 Botones Laterales magnéticos 
+- Sensor de 44,000 dpi
+- Carga USB-C
+- PC/Mac - Blanco
+
+Precio: $2,499
+
+Link: <https://www.amazon.com.mx/Logitech-Lightspeed-inal%C3%A1mbrico-magn%C3%A9ticos-Personalizables/dp/B0DJFZ7S4R/ref=asc_df_B0DJFZ7S4R?mcid=18771c3aefad32feb0a17b05583f6a25&tag=gledskshopmx-20&linkCode=df0&hvadid=730033385251&hvpos=&hvnetw=g&hvrand=2178580473951129706&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=1010097&hvtargid=pla-2386188072670&language=es_MX&gad_source=1&th=1>
+
+![Figura 15 — GitHub](assets/img/01-publicar/mouse2.jpg)
+
+*Figura 15:* Mouse Logitech G Pro 2 Lightspeed Mouse inalámbrico.
+
+### 3.6) Teclado Razer BlackWidow V3 Tenkeyless
+- USB
+
+Precio: $2,288
+
+Link: <https://www.amazon.com.mx/Razer-RazerTM-BlackWidow-Tenkeyless-StandardWindows/dp/B09698GFZJ/ref=asc_df_B09698GFZJ?mcid=d3c1c50ba407359f9c3719e0d8a85c86&gad_source=1&gad_campaignid=22597582687&gbraid=0AAAAAqmHpTEsQB8kqHA4yoUf-XUO2l4JW&gclid=CjwKCAiA95fLBhBPEiwATXUsxJ34umo5a75oKjfQe21XhWLWyjMkf88OGI00Bho7UOR7bvid3YT9jhoCtDgQAvD_BwE&th=1>
+
+![Figura 16 — GitHub](assets/img/01-publicar/teclado2.jpg)
+
+*Figura 16:* Teclado Razer BlackWidow V3 Tenkeyless.
+
+### 3.7) Fuente de poder Corsair Rm1000e 80 Plus Titanium Modular Atx Negro
+- Fuente de tipo ATX
+
+Precio: $3,739
+
+Link: <https://www.mercadolibre.com.mx/fuente-de-poder-corsair-rm1000e-80-plus-titanium-modular-atx-negro/p/MLM47389652#polycard_client=search-nordic&search_layout=grid&position=1&type=product&tracking_id=e50020b1-d311-429a-93ec-5b7873f6a4b1&wid=MLM2361246587&sid=search>
+
+![Figura 17 — GitHub](assets/img/01-publicar/fuente2.png)
+
+*Figura 17:* Fuente de poder Corsair Rm1000e 80 Plus Titanium Modular Atx Negro.
+
+### 3.8) Gabinete ENTHOO ELITE
+- Dimensiones 270 x 750 x 615 mm | 10.6 x 29.5 x 24.2 in
+
+Precio: $4,601
+
+Link: <https://phanteks.com/product/enthoo-elite/>
+
+![Figura 18 — GitHub](assets/img/01-publicar/gabinete2.png)
+
+*Figura 18:* Gabinete ENTHOO ELITE.
+
+### 3.9) Almacenamiento Unidad SSD Interno Kingston Nv3 
+- Capacidad: 4 TB.
+- Con tecnología 3D NAND.
+- Útil para guardar programas y documentos con su capacidad de 4 TB
+
+Precio: $5,799
+
+Link: <https://www.mercadolibre.com.mx/unidad-ssd-interno-kingston-nv3-4tb-m2-nvme-40-6000mbs/p/MLM43202245#polycard_client=search-nordic&search_layout=grid&position=1&type=product&tracking_id=795ea1b7-d6eb-48e1-8703-3982b6342e43&wid=MLM4644877024&sid=search>
+
+![Figura 19 — GitHub](assets/img/01-publicar/SSD2.png)
+
+*Figura 19:* Almacenamiento Unidad SSD Interno Kingston Nv3 .
+
+### 3.10) Monitor LG Monitor Curvo UltraWide Gaming 
+- 34"
+- 160Hz 
+- Tiempo de Respuesta 1ms, 
+- Puerto HDMI
+
+Precio: $6,999
+
+Link: <https://www.amazon.com.mx/LG-34GP63A-B-UltraWide-Monitor-FreeSync/dp/B0BRYVKW7F/ref=sr_1_2?adgrpid=143727048150&dib=eyJ2IjoiMSJ9.c9Ww2fKA9jiKHUepzw4AEZngWBMiHEHlnmIiTLiBGNvTE0FaFrSzFrrM5A68LvLkTx2M3mZ9WqzUJogkeDhgZV802JRqnX5TtagxMm3UJHTYqVzUi4TVeU6xlwyUiSpJ9tRZwya9O5Lk_0VkTyhNFIdixTd6JrDmbdHe8E9pnA0louHyatfJlcOcyvjlgipUHwBmmB0umtBzR3gEc9GVoF1z40b1GNaZbWoznxus6AtwLgnQ6UaMNqUY85JxgMUdTL-uAJrvvTRuQKrYu63ULIyuhynOh9P8BajvKjxUOus.N4TwQYwUzuQ_sds3amuLo0BFL6ouq8-Xid-phTrMLSk&dib_tag=se&hvadid=678136428460&hvdev=c&hvlocphy=1010097&hvnetw=g&hvqmt=b&hvrand=5357735989054795654&hvtargid=kwd-1050338096084&hydadcr=27006_14537407&keywords=lg%2B34gn850-b%2Bultrawide&mcid=77cf17554ff63961b35409b079399eae&qid=1768361744&sr=8-2&th=1>
+
+![Figura 20 — GitHub](assets/img/01-publicar/monitor2.jpg)
+
+*Figura 20:* Monitor LG Monitor Curvo UltraWide Gaming.
