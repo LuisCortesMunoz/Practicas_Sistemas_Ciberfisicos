@@ -29,12 +29,45 @@ En este apartado se muestra una fotografía de la conexión para el protocolo UA
 ![Figura 3 — GitHub](assets/img/01-publicar/conexionFisica.jpeg)
 *Figura 3:* Conexión física.
 
+### 1.3 Código utilizado
+
+En el maestro se construye una trama de 6 bytes: byte de inicio, secuencia y checksum XOR; se envía por UART y se mide el tiempo hasta recibir el eco completo.
+
+````md
+```Micro python
+START_BYTE = 0xA5
+
+def make_frame(k: int) -> bytes:
+    seq = struct.pack("<I", k)
+    first5 = bytes([START_BYTE]) + seq
+    cs = 0
+    for bb in first5:
+        cs ^= bb
+    return first5 + bytes([cs])
+```
+````
+
+En el esclavo se recibe la trama, se verifica el checksum y, si es válida, se responde con los mismos 6 bytes.
+
+
+````md
+```Arduino UNO
+const uint8_t START_BYTE = 0xA5;
+
+uint8_t checksum5(const uint8_t *p) {
+  uint8_t c = 0;
+  for (int i = 0; i < 5; i++) c ^= p[i];
+  return c;
+}
+```
+````
 ### 1.4 Registro de datos en terminal
 
 En la Figura 4 se presenta la salida de la terminal durante la ejecución del sistema de medición, en la cual se muestran de manera secuencial el índice del mensaje, la latencia de transmisión y un valor binario que indica la correcta recepción por parte del microcontrolador esclavo. La información fue guardada automáticamente en un archivo CSV para su análisis estadístico.
 
 ![Figura 4 — GitHub](assets/img/01-publicar/terminalMaster.jpeg)
 *Figura 4:* Datos registrados en terminal.
+
 
 ### 1.5 Resultados de latencia UART
 
