@@ -123,7 +123,7 @@ La información generada fue almacenada en un archivo CSV y empleada para la gen
 
 En la Figura 7 se presenta la gráfica de latencia obtenida mediante el protocolo SPI durante el envío de 1000 transacciones entre el XIAO ESP32-S3 (maestro) y el Arduino UNO (esclavo). Cada punto representa el tiempo requerido para completar una transferencia completa de datos, mientras que las líneas punteadas indican el valor promedio y una desviación estándar. Se observa una latencia promedio aproximada de 8.14 ms con variaciones mínimas, lo que evidencia un comportamiento estable y determinístico característico de los protocolos síncronos como SPI.
 
-![Figura 7 — GitHub](assets/img/resultados/grafSPI.jpeg)
+![Figura 7 — GitHub](assets/img/01-publicar/grafSPI.jpeg)
 *Figura 7:* Gráfica de latencia SPI.
 
 
