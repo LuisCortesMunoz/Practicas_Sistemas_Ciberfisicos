@@ -116,7 +116,7 @@ Una vez cargado el programa, se localizó el módulo **read SVG**, donde se util
 
 Primero el archivo del **grabado de pistas** y posteriormente el archivo correspondiente al **corte perimetral de la placa**.
 
-![Figura 8 — Carga del archivo SVG](assets/img/01-publicar/fabmodule4.png)
+![Figura 8 — Carga del archivo SVG](assets/img/01-publicar/Fabmodul4.png)
 
 *Figura 8: Importación del diseño del PCB en formato SVG.*
 
@@ -145,7 +145,7 @@ Parámetros utilizados:
 
 Posteriormente se configuró el módulo de control de la Roland SRM-20, donde se estableció el **origen de trabajo (X, Y, Z)**, que corresponde al punto físico desde el cual iniciará el fresado sobre la placa de cobre.
 
-![Figura 10 — Origen, jog height y home](assets/img/01-publicar/Fabmodul6.png)
+![Figura 10 — Origen, jog height y home](assets/img/01-publicar/fabmodul6.png)
 
 *Figura 10: Configuración de origen, altura de seguridad y posición home.*
 
@@ -163,13 +163,10 @@ Una vez configurados los parámetros, se regresó al módulo **mill raster 2D** 
 
 El sistema arrojó un archivo con extensión **.rml**, correspondiente al control de movimiento de la fresadora CNC.
 
-![Figura 11 — Generación de trayectorias](assets/img/01-publicar/fabmodul5.png)
+![Figura 11 — Generación de trayectorias](assets/img/01-publicar/srm.png)
 
 *Figura 11: Cálculo automático de rutas de corte.*
 
-![Figura 12 — Archivo generado](assets/img/01-publicar/fabmodul6.png)
-
-*Figura 12: Archivo .rml listo para fresado.*
 
 Este mismo procedimiento se repitió utilizando el SVG del **corte perimetral**, generando un segundo archivo **.rml** para el marco de la placa.
 
