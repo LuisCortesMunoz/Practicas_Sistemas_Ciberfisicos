@@ -104,7 +104,7 @@ donde se desplegó la lista de procesos disponibles. Dentro de esta se seleccion
 
 correspondiente al flujo de trabajo específico para la fresadora Roland SRM-20 y fabricación de PCBs.
 
-![Figura 7 — Selección del programa en MODS](assets/img/01-publicar/fabmodul1.png)
+![Figura 7 — Selección del programa en MODS](assets/img/01-publicar/fabmodul3.png)
 
 *Figura 7: Programa seleccionado para mecanizado de PCB.*
 
@@ -116,7 +116,7 @@ Una vez cargado el programa, se localizó el módulo **read SVG**, donde se util
 
 Primero el archivo del **grabado de pistas** y posteriormente el archivo correspondiente al **corte perimetral de la placa**.
 
-![Figura 8 — Carga del archivo SVG](assets/img/01-publicar/fabmodule2.png)
+![Figura 8 — Carga del archivo SVG](assets/img/01-publicar/fabmodule4.png)
 
 *Figura 8: Importación del diseño del PCB en formato SVG.*
 
@@ -126,7 +126,7 @@ Primero el archivo del **grabado de pistas** y posteriormente el archivo corresp
 
 Después de cargar el SVG del grabado, se configuraron los parámetros del módulo **mill raster 2D**, ajustándolos al diseño de pistas (0.8 mm), plano de tierra (1 mm) y herramienta utilizada.
 
-![Figura 9 — Parámetros de fresado en MODS](assets/img/01-publicar/fabmodul3.png)
+![Figura 9 — Parámetros de fresado en MODS](assets/img/01-publicar/fabmodul5.png)
 
 *Figura 9: Configuración de herramienta y profundidades de corte.*
 
@@ -145,7 +145,7 @@ Parámetros utilizados:
 
 Posteriormente se configuró el módulo de control de la Roland SRM-20, donde se estableció el **origen de trabajo (X, Y, Z)**, que corresponde al punto físico desde el cual iniciará el fresado sobre la placa de cobre.
 
-![Figura 10 — Origen, jog height y home](assets/img/01-publicar/Fabmodul4.png)
+![Figura 10 — Origen, jog height y home](assets/img/01-publicar/Fabmodul6.png)
 
 *Figura 10: Configuración de origen, altura de seguridad y posición home.*
 
