@@ -127,8 +127,18 @@ En la Figura 7 se presenta la gráfica de latencia obtenida mediante el protocol
 *Figura 7:* Gráfica de latencia SPI.
 
 ## 3) I2C (Inter-Integrated Circuit)
+I2C es un protocolo de comunicación serie síncrona que utiliza dos líneas: SCL (reloj) y SDA (datos).
+Permite una topología multipunto, conectando varios dispositivos en el mismo bus mediante un esquema maestro–esclavo.
+Cada dispositivo se identifica con una dirección única, típicamente de 7 bits (hasta 128) o de 10 bits (más de 1000). Sus velocidades comunes incluyen 100 kbps, 400 kbps, 1 Mbps y hasta 3.4 Mbps.
+La conexión es simple: solo SDA, SCL y GND compartidos.
 
 ### 3.1 Imagen de conexíon entre microontroladores 
+En este apartado se muestra una fotografía de la conexión para el protocolo I2C entre una XIAO ESP32-S3 como maestro y como esclavo Arduino UNO.
+
+![Figura 6 — GitHub](assets/img/01-publicar/conexion_I2C.jpeg)
+
+*Figura 6:* Conexión física Maestro: XIAO ESP32-S3 / Esclavo: Arduino Uno.
+
 
 ### 3.2 Implementación del protocolo SPI
 
