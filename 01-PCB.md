@@ -87,7 +87,29 @@ Una vez que agregues los valores necesarios, presiona Aceptar. Con esto, ya podr
 ![Figura 9 — GitHub](assets/img/01-publicar/pcb_paso61.png)
 *Figura 9:* Ventana para agregar y seleccionar anchos de pista en KiCAD
 
-## 7) 
+## 7) Contorno de la PCB y plano de tierras (GND)
+En este paso, como se muestra en la Figura 10, se define el contorno (borde) de la placa. Para ello, se dibuja un rectángulo alrededor del diseño utilizando la herramienta indicada en el recuadro rojo. Después, da doble clic sobre el borde (marcado en verde) para editar sus propiedades.
+
+Finalmente, se abrirá una ventana como la señalada en el recuadro azul, donde podrás definir el ancho del trazo. Se recomienda utilizar un ancho de 0.8 mm y, en la opción de capa, seleccionar Edge.Cuts para que el contorno quede correctamente configurado para el corte.
+
+![Figura 10 — GitHub](assets/img/01-publicar/pcb_paso7.png)
+*Figura 10:* Creación del contorno de la PCB: herramienta de rectángulo, edición del borde y selección de la capa Edge.Cuts
+
+Como siguiente paso, en la Figura 11 se muestra (recuadro rojo) la herramienta Draw Filled Zones, la cual se utiliza para crear el plano de tierras (GND). Para comenzar, da clic en el ícono indicado y se desplegará una ventana de configuración donde podrás definir los parámetros de la zona.
+
+![Figura 11 — GitHub](assets/img/01-publicar/pcb_paso71.png)
+*Figura 11:* Herramienta “Draw Filled Zones” para generar el plano de tierras (GND) en la PCB
+
+En la ventana que se despliega (Figura 12), selecciona la red GND. Después, en la sección de margen, se recomienda trabajar con un valor de 0.5 a 1.0 mm. Una vez configurados estos parámetros, da clic en Aceptar.
+
+Luego, delimita la zona seleccionando cada una de las esquinas del contorno definido para la placa. Al finalizar el trazo, presiona la tecla B para rellenar la zona y generar el plano de tierras.
+
+![Figura 12 — GitHub](assets/img/01-publicar/pcb_paso72.png)
+*Figura 12:* Configuración del plano de tierras: selección de la red GND y ajuste del margen (clearance) antes de rellenar la zona.
+
+Por último, ve al menú Archivo y selecciona Trazar (Plot). Primero genera el archivo de la capa Edge.Cuts, que corresponde al contorno (marco) de la placa, y después traza la capa F.Cu, que contiene las pistas del circuito.
+
+Una vez que tengas estos archivos generados, podrás continuar con el siguiente paso, ya que el trabajo en KiCAD queda finalizado.
 
 ---
 
@@ -97,9 +119,9 @@ Una vez que agregues los valores necesarios, presiona Aceptar. Con esto, ya podr
 
 Para la fabricación de la tarjeta de circuito impreso se utilizó una **fresadora CNC de 3 ejes monoFab Roland SRM-20**, la cual permite realizar trabajos de alta precisión sobre placas de cobre para prototipado electrónico.
 
-![Figura 15 — Fresadora CNC Roland SRM-20](assets/img/01-publicar/CNC.jpg)
+![Figura 13 — Fresadora CNC Roland SRM-20](assets/img/01-publicar/CNC.jpg)
 
-*Figura 15: Fresadora CNC Roland SRM-20 utilizada para el mecanizado del PCB.*
+*Figura 13: Fresadora CNC Roland SRM-20 utilizada para el mecanizado del PCB.*
 
 Como herramientas de corte se emplearon dos brocas:
 
@@ -135,9 +157,9 @@ donde se desplegó la lista de procesos disponibles. Dentro de esta se seleccion
 
 correspondiente al flujo de trabajo específico para la fresadora Roland SRM-20 y fabricación de PCBs.
 
-![Figura 16 — Selección del programa en MODS](assets/img/01-publicar/fabmodul3.png)
+![Figura 14 — Selección del programa en MODS](assets/img/01-publicar/fabmodul3.png)
 
-*Figura 16: Programa seleccionado para mecanizado de PCB.*
+*Figura 14: Programa seleccionado para mecanizado de PCB.*
 
 ---
 
@@ -147,9 +169,9 @@ Una vez cargado el programa, se localizó el módulo **read SVG**, donde se util
 
 Primero el archivo del **grabado de pistas** y posteriormente el archivo correspondiente al **corte perimetral de la placa**.
 
-![Figura 17 — Carga del archivo SVG](assets/img/01-publicar/Fabmodul4.png)
+![Figura 15 — Carga del archivo SVG](assets/img/01-publicar/Fabmodul4.png)
 
-*Figura 17: Importación del diseño del PCB en formato SVG.*
+*Figura 15: Importación del diseño del PCB en formato SVG.*
 
 ---
 
@@ -157,9 +179,9 @@ Primero el archivo del **grabado de pistas** y posteriormente el archivo corresp
 
 Después de cargar el SVG del grabado, se configuraron los parámetros del módulo **mill raster 2D**, ajustándolos al diseño de pistas (0.8 mm), plano de tierra (1 mm) y herramienta utilizada.
 
-![Figura 18 — Parámetros de fresado en MODS](assets/img/01-publicar/fabmodul5.png)
+![Figura 16 — Parámetros de fresado en MODS](assets/img/01-publicar/fabmodul5.png)
 
-*Figura 18: Configuración de herramienta y profundidades de corte.*
+*Figura 16: Configuración de herramienta y profundidades de corte.*
 
 Parámetros utilizados:
 
@@ -176,9 +198,9 @@ Parámetros utilizados:
 
 Posteriormente se configuró el módulo de control de la Roland SRM-20, donde se estableció el **origen de trabajo (X, Y, Z)**, que corresponde al punto físico desde el cual iniciará el fresado sobre la placa de cobre.
 
-![Figura 19 — Origen, jog height y home](assets/img/01-publicar/fabmodul6.png)
+![Figura 17 — Origen, jog height y home](assets/img/01-publicar/fabmodul6.png)
 
-*Figura 19: Configuración de origen, altura de seguridad y posición home.*
+*Figura 17: Configuración de origen, altura de seguridad y posición home.*
 
 Estos parámetros permiten:
 
@@ -194,9 +216,9 @@ Una vez configurados los parámetros, se regresó al módulo **mill raster 2D** 
 
 El sistema arrojó un archivo con extensión **.rml**, correspondiente al control de movimiento de la fresadora CNC.
 
-![Figura 20 — Generación de trayectorias](assets/img/01-publicar/srm.png)
+![Figura 18 — Generación de trayectorias](assets/img/01-publicar/srm.png)
 
-*Figura 20: Cálculo automático de rutas de corte.*
+*Figura 18: Cálculo automático de rutas de corte.*
 
 
 Este mismo procedimiento se repitió utilizando el SVG del **corte perimetral**, generando un segundo archivo **.rml** para el marco de la placa.
@@ -207,9 +229,9 @@ Este mismo procedimiento se repitió utilizando el SVG del **corte perimetral**,
 
 Una vez generados los archivos **.rml** en MODS, estos se cargaron en el software **VPanel for SRM-20**, el cual permite controlar directamente la fresadora CNC y ejecutar las trayectorias de mecanizado.
 
-![Figura 21 — Interfaz de VPanel for SRM-20](assets/img/01-publicar/appFresa.jpg)
+![Figura 19 — Interfaz de VPanel for SRM-20](assets/img/01-publicar/appFresa.jpg)
 
-*Figura 21: Software VPanel utilizado para el control de la fresadora Roland SRM-20.*
+*Figura 19: Software VPanel utilizado para el control de la fresadora Roland SRM-20.*
 
 Dentro de este entorno se realizó primero la **definición del origen en el eje Z**, ajustando la altura de la herramienta hasta tocar suavemente la superficie de la placa de cobre. Este paso es fundamental para asegurar que la profundidad de corte sea correcta y evitar dañar el material o la herramienta.
 
