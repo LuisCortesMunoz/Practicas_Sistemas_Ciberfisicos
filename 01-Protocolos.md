@@ -135,11 +135,85 @@ La conexión es simple: solo SDA, SCL y GND compartidos.
 ### 3.1 Imagen de conexíon entre microontroladores 
 En este apartado se muestra una fotografía de la conexión para el protocolo I2C entre una XIAO ESP32-S3 como maestro y como esclavo Arduino UNO.
 
-![Figura 6 — GitHub](assets/img/01-publicar/conexion_I2C.jpeg)
+![Figura 8 — GitHub](assets/img/01-publicar/conexion_I2C.jpeg)
 
-*Figura 6:* Conexión física Maestro: XIAO ESP32-S3 / Esclavo: Arduino Uno.
+*Figura 8:* Conexión física Maestro: XIAO ESP32-S3 / Esclavo: Arduino Uno.
 
+### 3.2 Implementación del protocolo I2C
+1. Maestro (XIAO ESP32-S3, MicroPython)
+- Frecuencia del reloj (SCL) y configuración del bus
+- freq=FREQ_HZ define la frecuencia del reloj SCL que genera el maestro. Esa frecuencia controla cuán rápido se transmiten los bits en el bus
 
-### 3.2 Implementación del protocolo SPI
+````md
+```Micro python
+    FREQ_HZ = 100000
+    i2c = I2C(0, sda=Pin(5), scl=Pin(6), freq=FREQ_HZ)
+```
+````
 
-### 3.3 Resultados de latencia SPI
+- En el siguiente fragmento de código se mide:
+    a) Write: el ESP32 envía 4 bytes al UNO.
+    b) El UNO recibe y guarda last_seq (callback onReceive).
+    c) Read: el ESP32 hace una lectura de 4 bytes.
+    d) El UNO responde con last_seq (callback onRequest).
+
+````md
+```Micro python
+    t0 = time.ticks_us()
+    i2c.writeto(I2C_ADDR, payload)
+    data = i2c.readfrom(I2C_ADDR, 4)
+    t1 = time.ticks_us()
+    dt_sec = time.ticks_diff(t1, t0)/1_000_000.0
+```
+````
+
+- Verificación del mensaje: Si ok da 0 en algunos puntos, quiere decir que el dato no se envió ni recibió correctamente; si ok = 1, eso quiere decir que el dato se envió y recibió correctamente.
+
+````md
+```Micro python
+    payload = struct.pack("<I", k)
+    ack = struct.unpack("<I", data)[0]
+    ok = 1 if ack == k else 0
+```
+````
+
+2. Esclavo (Arduino UNO)
+El Arduino UNO funciona como esclavo I2C con la dirección 0x08 usando la librería Wire. Cuando el maestro (ESP32) le envía 4 bytes, el UNO los recibe en el callback `onReceiveHandler()`, reconstruye el número `uint32_t` en formato little-endian y lo guarda en `last_seq`. Después, cuando el maestro solicita datos, el callback `onRequestHandler()` responde enviando de regreso esos mismos 4 bytes, actuando como un “eco” del último valor recibido. En este modo, el UNO no define la frecuencia del bus: sigue el reloj SCL que genera el maestro.
+
+````md
+```C++
+    // Dirección del esclavo (0x08)
+    #define I2C_ADDRESS 0x08
+    Wire.begin(I2C_ADDRESS);
+
+    // Registro de callbacks (recibir y responder)
+    Wire.onReceive(onReceiveHandler);
+    Wire.onRequest(onRequestHandler);
+
+    // Recepción de 4 bytes y guardado en last_seq (little-endian)
+    if (numBytes >= 4)
+        {
+        uint8_t b0 = Wire.read();
+        uint8_t b1 = Wire.read();
+        uint8_t b2 = Wire.read();
+        uint8_t b3 = Wire.read();
+
+        last_seq = ((uint32_t)b0) |
+                    ((uint32_t)b1 << 8) |
+                    ((uint32_t)b2 << 16) |
+                    ((uint32_t)b3 << 24);
+        }
+```
+````
+
+### 3.3 Resultados de latencia I2C
+En la gráfica de la Figura 9 se observa que la latencia por mensaje se mantiene muy estable a lo largo de los 1000 envíos. El promedio reportado es de 1.6388 ms, y la variación es baja: la banda de ±1 desviación estándar va aproximadamente de 1.6261 ms a 1.6515 ms (≈ ±0.0127 ms, es decir, ±12.7 µs).
+
+Un punto clave es el reloj usado para medir: en el maestro (ESP32-S3) el tiempo se calcula con `time.ticks_us()` (microsegundos) y luego se convierte a segundos. Eso significa que la medición está cuantizada en pasos de ~1 µs y refleja el tiempo total de la transacción I2C más el overhead del sistema. En resumen, con la frecuencia configurada del bus, el sistema logra una latencia promedio de ~1.64 ms por mensaje, con comportamiento consistente.
+
+![Figura 9 — GitHub](assets/img/01-publicar/latency_i2c_grafica.png)
+
+*Figura 9:* Gráfica de latencia I2C.
+
+## 4) Conclusión
+Con base en los resultados obtenidos promedio, el protocolo más rápido fue UART, ya que se observa un comportamiento alrededor de 0.65 ms por mensaje, siendo el menor tiempo de los tres. En segundo lugar queda I2C, con un promedio de 1.6388 ms, estable y con baja variación. Finalmente, SPI fue el más lento en tu implementación, con una latencia promedio de 8.14 ms. En conclusión, para este experimento y configuración, UART fue el mejor en velocidad, seguido de I2C, y SPI quedó como la opción menos rápida.
