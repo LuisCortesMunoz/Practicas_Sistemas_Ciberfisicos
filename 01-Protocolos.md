@@ -152,10 +152,10 @@ En este apartado se muestra una fotografía de la conexión para el protocolo I2
 ````
 
 - En el siguiente fragmento de código se mide:
-    a) Write: el ESP32 envía 4 bytes al UNO.
-    b) El UNO recibe y guarda last_seq (callback onReceive).
-    c) Read: el ESP32 hace una lectura de 4 bytes.
-    d) El UNO responde con last_seq (callback onRequest).
+    - a) Write: el ESP32 envía 4 bytes al UNO.
+    - b) El UNO recibe y guarda `last_seq` (callback `onReceive`).
+    - c) Read: el ESP32 hace una lectura de 4 bytes.
+    - d) El UNO responde con `last_seq` (callback `onRequest`).
 
 ````md
 ```Micro python
@@ -178,6 +178,7 @@ En este apartado se muestra una fotografía de la conexión para el protocolo I2
 ````
 
 2. Esclavo (Arduino UNO)
+
 El Arduino UNO funciona como esclavo I2C con la dirección 0x08 usando la librería Wire. Cuando el maestro (ESP32) le envía 4 bytes, el UNO los recibe en el callback `onReceiveHandler()`, reconstruye el número `uint32_t` en formato little-endian y lo guarda en `last_seq`. Después, cuando el maestro solicita datos, el callback `onRequestHandler()` responde enviando de regreso esos mismos 4 bytes, actuando como un “eco” del último valor recibido. En este modo, el UNO no define la frecuencia del bus: sigue el reloj SCL que genera el maestro.
 
 ````md
