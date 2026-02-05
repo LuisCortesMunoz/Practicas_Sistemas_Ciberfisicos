@@ -107,9 +107,8 @@ Luego, delimita la zona seleccionando cada una de las esquinas del contorno defi
 ![Figura 12 — GitHub](assets/img/01-publicar/pcb_paso72.png)
 *Figura 12:* Configuración del plano de tierras: selección de la red GND y ajuste del margen (clearance) antes de rellenar la zona.
 
-Por último, ve al menú Archivo y selecciona Trazar (Plot). Primero genera el archivo de la capa Edge.Cuts, que corresponde al contorno (marco) de la placa, y después traza la capa F.Cu, que contiene las pistas del circuito.
+Por último, ve al menú Archivo y selecciona Trazar (Plot). Primero genera el archivo de la capa Edge.Cuts, que corresponde al contorno (marco) de la placa, y después traza la capa F.Cu, que contiene las pistas del circuito. Una vez que tengas estos archivos generados, podrás continuar con el siguiente paso.
 
-Una vez que tengas estos archivos generados, podrás continuar con el siguiente paso.
 ---
 
 ## 8) Fabricación de la PCB mediante fresado CNC (Roland SRM-20)
