@@ -140,7 +140,8 @@ En este apartado se muestra una fotografía de la conexión para el protocolo I2
 *Figura 8:* Conexión física Maestro: XIAO ESP32-S3 / Esclavo: Arduino Uno.
 
 ### 3.2 Implementación del protocolo I2C
-1. Maestro (XIAO ESP32-S3, MicroPython)
+
+#### 3.2.1) Maestro (XIAO ESP32-S3, MicroPython)
 - Frecuencia del reloj (SCL) y configuración del bus
 - freq=FREQ_HZ define la frecuencia del reloj SCL que genera el maestro. Esa frecuencia controla cuán rápido se transmiten los bits en el bus
 
@@ -177,8 +178,7 @@ En este apartado se muestra una fotografía de la conexión para el protocolo I2
 ```
 ````
 
-
-2. Esclavo (Arduino UNO)
+#### 3.2.2) Esclavo (Arduino UNO)
 
 El Arduino UNO funciona como esclavo I2C con la dirección 0x08 usando la librería Wire. Cuando el maestro (ESP32) le envía 4 bytes, el UNO los recibe en el callback `onReceiveHandler()`, reconstruye el número `uint32_t` en formato little-endian y lo guarda en `last_seq`. Después, cuando el maestro solicita datos, el callback `onRequestHandler()` responde enviando de regreso esos mismos 4 bytes. En este modo, el UNO no define la frecuencia del bus, sigue el reloj SCL que genera el maestro.
 
