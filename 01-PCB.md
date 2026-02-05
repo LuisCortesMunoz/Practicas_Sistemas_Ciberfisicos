@@ -100,7 +100,7 @@ Como siguiente paso, en la Figura 11 se muestra (recuadro rojo) la herramienta D
 ![Figura 11 — GitHub](assets/img/01-publicar/pcb_paso71.png)
 *Figura 11:* Herramienta “Draw Filled Zones” para generar el plano de tierras (GND) en la PCB
 
-En la ventana que se despliega (Figura 12), selecciona la red GND. Después, en la sección de margen, se recomienda trabajar con un valor de 0.5 a 1.0 mm. Una vez configurados estos parámetros, da clic en Aceptar.
+En la ventana que se despliega (Figura 12), selecciona GND. Después, en la sección de margen, se recomienda trabajar con un valor de 0.5 a 1.0 mm. Una vez configurados estos parámetros, da clic en Aceptar.
 
 Luego, delimita la zona seleccionando cada una de las esquinas del contorno definido para la placa. Al finalizar el trazo, presiona la tecla B para rellenar la zona y generar el plano de tierras.
 
