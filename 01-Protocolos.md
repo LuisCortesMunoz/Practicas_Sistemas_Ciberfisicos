@@ -210,11 +210,11 @@ El Arduino UNO funciona como esclavo I2C con la dirección 0x08 usando la librer
 ### 3.3 Resultados de latencia I2C
 En la gráfica de la Figura 9 se observa que la latencia por mensaje se mantiene muy estable a lo largo de los 1000 envíos. El promedio reportado es de 1.6388 ms, y la variación es baja: la banda de ±1 desviación estándar va aproximadamente de 1.6261 ms a 1.6515 ms (≈ ±0.0127 ms, es decir, ±12.7 µs).
 
-Un punto clave es el reloj usado para medir: en el maestro (ESP32-S3) el tiempo se calcula con `time.ticks_us()` (microsegundos) y luego se convierte a segundos. Eso significa que la medición está cuantizada en pasos de ~1 µs y refleja el tiempo total de la transacción I2C más el overhead del sistema. En resumen, con la frecuencia configurada del bus, el sistema logra una latencia promedio de ~1.64 ms por mensaje, con comportamiento consistente.
+Un punto importante es cómo se mide el tiempo, en el ESP32 se usa `time.ticks_us()`, que cuenta microsegundos. Después ese valor se convierte a segundos. Esto significa que la medición tiene una precisión de aproximadamente 1 microsegundo y que el tiempo registrado incluye toda la operación I2C (enviar y recibir datos), además del tiempo que tarda el programa en ejecutar esas instrucciones. En resumen, con la frecuencia configurada del bus, el sistema logra una latencia promedio de ~1.64 ms por mensaje, con comportamiento consistente.
 
 ![Figura 9 — GitHub](assets/img/01-publicar/latency_i2c_grafica.png)
 
 *Figura 9:* Gráfica de latencia I2C.
 
 ## 4) Conclusión
-Con base en los resultados obtenidos promedio, el protocolo más rápido fue UART, ya que se observa un comportamiento alrededor de 0.65 ms por mensaje, siendo el menor tiempo de los tres. En segundo lugar queda I2C, con un promedio de 1.6388 ms, estable y con baja variación. Finalmente, SPI fue el más lento en tu implementación, con una latencia promedio de 8.14 ms. En conclusión, para este experimento y configuración, UART fue el mejor en velocidad, seguido de I2C, y SPI quedó como la opción menos rápida.
+Para finalizar, con los resultados obtenidos promedio, el protocolo más rápido fue UART, ya que se observa un comportamiento alrededor de 0.65 ms por mensaje, siendo el menor tiempo de los tres. En segundo lugar queda I2C, con un promedio de 1.6388 ms, estable y con baja variación. Finalmente, SPI fue el más lento en tu implementación, con una latencia promedio de 8.14 ms. En conclusión, para este experimento y configuración, UART fue el mejor en velocidad, seguido de I2C, y SPI quedó como la opción menos rápida.
