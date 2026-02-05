@@ -109,8 +109,7 @@ Luego, delimita la zona seleccionando cada una de las esquinas del contorno defi
 
 Por último, ve al menú Archivo y selecciona Trazar (Plot). Primero genera el archivo de la capa Edge.Cuts, que corresponde al contorno (marco) de la placa, y después traza la capa F.Cu, que contiene las pistas del circuito.
 
-Una vez que tengas estos archivos generados, podrás continuar con el siguiente paso, ya que el trabajo en KiCAD queda finalizado.
-
+Una vez que tengas estos archivos generados, podrás continuar con el siguiente paso.
 ---
 
 ## 8) Fabricación de la PCB mediante fresado CNC (Roland SRM-20)

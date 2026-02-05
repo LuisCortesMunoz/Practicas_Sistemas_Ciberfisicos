@@ -126,4 +126,10 @@ En la Figura 7 se presenta la gráfica de latencia obtenida mediante el protocol
 ![Figura 7 — GitHub](assets/img/01-publicar/grafSPI.jpeg)
 *Figura 7:* Gráfica de latencia SPI.
 
+## 3) I2C (Inter-Integrated Circuit)
 
+### 3.1 Imagen de conexíon entre microontroladores 
+
+### 3.2 Implementación del protocolo SPI
+
+### 3.3 Resultados de latencia SPI
