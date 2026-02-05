@@ -209,9 +209,9 @@ El Arduino UNO funciona como esclavo I2C con la dirección 0x08 usando la librer
 ````
 
 ### 3.3 Resultados de latencia I2C
-En la gráfica de la Figura 9 se observa que la latencia por mensaje se mantiene muy estable a lo largo de los 1000 envíos. El promedio reportado es de 1.6388 ms, y la variación es baja: la banda de ±1 desviación estándar va aproximadamente de 1.6261 ms a 1.6515 ms (≈ ±0.0127 ms, es decir, ±12.7 µs).
+En la gráfica de la Figura 9 se observa que la latencia por mensaje se mantiene muy estable a lo largo de los 1000 envíos. El promedio observado es de 1.6388 ms, y la variación es baja: la banda de ±1 desviación estándar va aproximadamente de 1.6261 ms a 1.6515 ms (≈ ±0.0127 ms, es decir, ±12.7 µs).
 
-Un punto importante es cómo se mide el tiempo, en el ESP32 se usa `time.ticks_us()`, que cuenta microsegundos. Después ese valor se convierte a segundos. Esto significa que la medición tiene una precisión de aproximadamente 1 microsegundo y que el tiempo registrado incluye toda la operación I2C (enviar y recibir datos), además del tiempo que tarda el programa en ejecutar esas instrucciones. En resumen, con la frecuencia configurada del bus, el sistema logra una latencia promedio de ~1.64 ms por mensaje, con comportamiento consistente.
+Un punto importante a considerar es cómo se mide el tiempo, en el ESP32 se usa `time.ticks_us()`, que cuenta microsegundos. Después ese valor se convierte a segundos. Esto significa que la medición tiene una precisión de aproximadamente 1 microsegundo y que el tiempo registrado incluye toda la operación I2C (enviar y recibir datos), además del tiempo que tarda el programa en ejecutar esas instrucciones. En resumen, con la frecuencia configurada del bus, el sistema logra una latencia promedio de ~1.64 ms por mensaje, con comportamiento consistente.
 
 ![Figura 9 — GitHub](assets/img/01-publicar/latency_i2c_grafica.png)
 
