@@ -241,3 +241,22 @@ Una vez definidos los orígenes, se presionó el botón **Cut**, lo cual abrió 
 
 Este mismo procedimiento se repitió tanto para el archivo del **grabado de pistas** como para el archivo del **corte perimetral de la placa**.
 
+### 8.9 Resultado final de la PCB y prueba de funcionamiento
+
+En la Figura 22 se muestra el resultado final de la placa PCB fabricada y ensamblada, donde se observa el microcontrolador XIAO montado junto con los componentes electrónicos correspondientes, así como las pistas correctamente ruteadas y soldadas. La calidad del fresado permitió definir de forma clara las conexiones del circuito, asegurando un correcto aislamiento entre pistas.
+
+![Figura 22 — Github](assets/img/01-publicar/pcb_final.jpeg)
+*Figura 22: PCB final ensamblada*
+
+Una vez verificado el funcionamiento eléctrico de la placa, se cargó un programa de prueba para validar su operación. El sistema implementado utiliza un botón como entrada de control, permitiendo encender de manera secuencial tres LEDs. Al presionar el botón por primera vez se activa el primer LED, al presionarlo nuevamente se enciende el segundo, y en una tercera pulsación se activa el tercer LED.
+
+Este comportamiento confirma la correcta lectura de entradas digitales, el control de salidas y la integración adecuada entre hardware y software en la placa desarrollada.
+
+### 9 Video de funcionamiento del sistema
+
+En el siguiente video se muestra el comportamiento del circuito durante la ejecución del programa, evidenciando el encendido secuencial de los LEDs al presionar el botón.
+
+<video controls width="720">
+  <source src="{{ '/assets/videos/funcionamiento_pcb.mp4' | relative_url }}" type="video/mp4">
+  Tu navegador no soporta video HTML5.
+</video>
