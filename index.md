@@ -8,6 +8,10 @@ nav_order: 1
 
 Este repositorio será nuestra página del curso: aquí se documentan todas las prácticas realizadas en la materia de Sistemas Ciberfísicos, incluyendo el desarrollo, la metodología y las evidencias de los resultados obtenidos durante el semestre de primavera 2026.
 
+Integrantes del Equipo
+    - **Luis Cortés Muñoz:** Estudiante de **Ibero Ingeniería en Mecatrónica y Sistemas Ciberfísicos** de noveno semestre.
+
+
 
 Contenido:
 - [1. Equipo de computo con presupuesto](02-estructura-del-repo.md)
