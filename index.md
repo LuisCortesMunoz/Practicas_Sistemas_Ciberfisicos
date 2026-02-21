@@ -10,7 +10,7 @@ Este repositorio será nuestra página del curso: aquí se documentan todas las 
 
 Integrantes del Equipo:
 
-    - **Luis Cortés Muñoz:** Estudiante de décimo semestre de Ingeniería en Mecatrónica y Sistemas Ciberfísicos en la Universidad Iberoamericana. Actualmente trabajo en PepsiCo en el área de Cadena de Suministro, específicamente en Planeación.
+**Luis Cortés Muñoz:** Estudiante de décimo semestre de Ingeniería en Mecatrónica y Sistemas Ciberfísicos en la Universidad Iberoamericana. Actualmente trabajo en PepsiCo en el área de Cadena de Suministro, específicamente en Planeación.
 
 Contenido:
 - [1. Equipo de computo con presupuesto](02-estructura-del-repo.md)
