@@ -280,4 +280,4 @@ Link: <https://www.amazon.com.mx/LG-34GP63A-B-UltraWide-Monitor-FreeSync/dp/B0BR
 *Figura 20:* Monitor LG Monitor Curvo UltraWide Gaming.
 
 A continuación se expone la presentación, donde se incluye toda la información previamente explicada.
-<iframe src="assets/files/calendario.pdf" width="100%" height="700px"></iframe>
+<iframe src="assets/PresupuestoPC.pdf" width="100%" height="700px"></iframe>
