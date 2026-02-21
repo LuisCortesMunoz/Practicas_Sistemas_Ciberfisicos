@@ -281,7 +281,7 @@ Link: <https://www.amazon.com.mx/LG-34GP63A-B-UltraWide-Monitor-FreeSync/dp/B0BR
 
 A continuación se expone la presentación, donde se incluye toda la información previamente explicada.
 <iframe 
-  src="assets/files/Presupuesto Pc.pdf" 
+  src="assets/files/Presupuesto PC.pdf" 
   width="100%" 
   height="700px">
 </iframe>
