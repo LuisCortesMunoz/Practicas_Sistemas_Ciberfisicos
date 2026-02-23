@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Protocolos de comunicación
+title: Protocolos de comunicacion
 parent: Sistemas Embebidos
 nav_order: 3
 permalink: /sistemas-embebidos/practica-3/
