@@ -65,7 +65,8 @@ uint8_t checksum5(const uint8_t *p) {
 ````
 
 ## Descargar
-[Descargar código MicroPython (.py)]({{ site.baseurl }}/assets/files/UART.py)
+[Descargar código MicroPython (UART.py)]({{ site.baseurl }}/assets/files/UART.py)
+
 [Descargar código Arduino (UART_Arduino.ino)]({{ site.baseurl }}/assets/files/UART_Arduino.ino)
 
 ### 1.4 Registro de datos en terminal
@@ -123,6 +124,12 @@ if (byte_count < 4) {
 Posteriormente, los datos recibidos se enviaron de vuelta al maestro durante los siguientes ciclos de reloj SPI, funcionando como confirmación de recepción.
 
 La información generada fue almacenada en un archivo CSV y empleada para la generación de las gráficas de desempeño del protocolo SPI.
+
+## Descargar
+[Descargar código MicroPython (SPI.py)]({{ site.baseurl }}/assets/files/SPI.py)
+
+[Descargar código Arduino (SPI_Arduino.ino)]({{ site.baseurl }}/assets/files/SPI_Arduino.ino)
+
 
 ### 2.3 Resultados de latencia SPI
 
