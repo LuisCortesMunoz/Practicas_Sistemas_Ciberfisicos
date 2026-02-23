@@ -65,7 +65,8 @@ uint8_t checksum5(const uint8_t *p) {
 ````
 
 ## Descargar
-[Descargar mi programa (.py)]({{ site.baseurl }}/assets/files/UART.py)
+[Descargar código MicroPython (.py)]({{ site.baseurl }}/assets/files/UART.py)
+[Descargar código Arduino (UART_Arduino.ino)]({{ site.baseurl }}/assets/files/UART_Arduino.ino)
 
 ### 1.4 Registro de datos en terminal
 
