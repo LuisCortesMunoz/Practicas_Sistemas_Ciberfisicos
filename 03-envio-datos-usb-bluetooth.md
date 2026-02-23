@@ -1,6 +1,7 @@
 ---
 layout: default
-title: Interfaz de Usuario (Python USB / BLE)
+title: Interfaz de Usuario
 nav_order: 4
 ---
 
+# Interfaz de Usuario (Python USB / Bluetooth)
