@@ -220,6 +220,11 @@ El Arduino UNO funciona como esclavo I2C con la dirección 0x08 usando la librer
 ```
 ````
 
+## Descargar
+[Descargar código MicroPython (I2C.py)]({{ site.baseurl }}/assets/files/I2C.py)
+
+[Descargar código Arduino (I2C_Arduino.ino)]({{ site.baseurl }}/assets/files/I2C_Arduino.ino)
+
 ### 3.3 Resultados de latencia I2C
 En la gráfica de la Figura 9 se observa que la latencia por mensaje se mantiene muy estable a lo largo de los 1000 envíos. El promedio observado es de 1.6388 ms, y la variación es baja: la banda de ±1 desviación estándar va aproximadamente de 1.6261 ms a 1.6515 ms (≈ ±0.0127 ms, es decir, ±12.7 µs).
 
