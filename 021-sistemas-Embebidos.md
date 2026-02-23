@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Práctica 1
+title: Sistemas Embebidos
 parent: Sistemas Embebidos
 nav_order: 1
 permalink: /sistemas-embebidos/practica-1/
