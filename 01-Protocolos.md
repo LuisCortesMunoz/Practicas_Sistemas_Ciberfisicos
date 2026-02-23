@@ -63,6 +63,10 @@ uint8_t checksum5(const uint8_t *p) {
 }
 ```
 ````
+
+## Descargar
+[Descargar mi programa (.py)]({{ site.baseurl }}/assets/files/UART.py)
+
 ### 1.4 Registro de datos en terminal
 
 En la Figura 4 se presenta la salida de la terminal durante la ejecución del sistema de medición, en la cual se muestran de manera secuencial el índice del mensaje, la latencia de transmisión y un valor binario que indica la correcta recepción por parte del microcontrolador esclavo. La información fue guardada automáticamente en un archivo CSV para su análisis estadístico.
