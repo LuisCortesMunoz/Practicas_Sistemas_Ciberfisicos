@@ -9,17 +9,18 @@ permalink: /servicio-web/pagina-web/
 # Práctica 1: Página Web
 
 ```HTML
-    <!doctype html>
-    <html>
-    <head>
-        <title>Luis CM</title>
-    </head>
-    <body>
-        <h1>Ing. Luis Cortes</h1>
-        <p>Este es mi primer proyecto web con HTML + CSS + JS.</p>
-    </body>
-    </html>
+<!doctype html>
+<html>
+<head>
+    <title>Luis CM</title>
+</head>
+<body>
+    <h1>Ing. Luis Cortes</h1>
+    <p>Este es mi primer proyecto web con HTML + CSS + JS.</p>
+</body>
+</html>
 ```
+
 ```Python
 # Step 1: Imports
 from flask import Flask, request
