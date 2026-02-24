@@ -8,7 +8,11 @@ permalink: /servicio-web/pagina-web/
 
 # Práctica 1: Página Web
 
-## Index
+## 1) Creación de la página (index.html)
+
+Al momento de elaborar la página web, el primer paso es crear un archivo index.html, el cual funcionará como la portada del sitio. En la sección 1.1 se muestra el código utilizado. Ahí puedes ir construyendo la estructura básica de la página, agregando el encabezado <head> (título) y el cuerpo <body> (contenido visible como textos, imágenes y secciones).
+
+### 1.1 Código index.html
 
 ```html
 <!doctype html>
@@ -23,7 +27,18 @@ permalink: /servicio-web/pagina-web/
 </html>
 ```
 
-## json
+## 2) Visualización local con Live Server
+
+Posteriormente, se recomienda trabajar en Visual Studio Code (escritorio) e instalar la extensión Live Server, la cual permite visualizar la página en un servidor local (localhost) y actualizarla automáticamente al guardar cambios. Una vez instalada la extensión, abre el archivo index.html, haz clic derecho y selecciona “Open with Live Server”. Si todo está configurado correctamente, se mostrará una pantalla como la presentada en la **Figura 1**.
+
+![Figura 1 — LiveServer](assets/img/01-publicar/paginaWeb1.jpg)
+
+*Figura 1: Visualización de la página web en localhost mediante la extensión Live Server en Visual Studio Code.*
+
+En la **Figura 1** se observa que, en la parte superior del navegador, la pestaña muestra el título Luis CM, y en la página se visualiza el contenido definido dentro del <body> del archivo index.html.
+
+
+## 3) json
 
 ```json
 {
@@ -32,7 +47,7 @@ permalink: /servicio-web/pagina-web/
 }
 ```
 
-## app
+## 4) app
 
 ```python
 # Step 1: Imports
