@@ -31,7 +31,7 @@ Al momento de elaborar la página web, el primer paso es crear un archivo index.
 
 Posteriormente, se recomienda trabajar en Visual Studio Code (escritorio) e instalar la extensión Live Server, la cual permite visualizar la página en un servidor local (localhost) y actualizarla automáticamente al guardar cambios. Una vez instalada la extensión, abre el archivo index.html, haz clic derecho y selecciona “Open with Live Server”. Si todo está configurado correctamente, se mostrará una pantalla como la presentada en la **Figura 1**.
 
-![Figura 1 — LiveServer](assets/img/01-publicar/paginaWeb1.jpg)
+![Figura 1 — LiveServer](assets/img/01-publicar/paginaWeb1.png)
 
 *Figura 1: Visualización de la página web en localhost mediante la extensión Live Server en Visual Studio Code.*
 
