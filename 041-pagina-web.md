@@ -1,12 +1,12 @@
 ---
 layout: default
-title: Página Web
+title: Página Web y API
 parent: Servicio Web
 nav_order: 1
 permalink: /servicio-web/pagina-web/
 ---
 
-# Práctica 1: Página Web
+# Práctica 1: Página Web y API
 
 ## 1) Creación de la página (index.html)
 
@@ -73,7 +73,20 @@ Finalmente, para acceder a la página desde otro dispositivo, se utiliza la sigu
 
 *Figura 3: Acceso a la página mediante IP y puerto desde otro dispositivo*
 
-## 4) app
+## 4) Creación de una aplicación web con Flask
+
+A continuación, se crea una aplicación web básica con Flask que permite guardar y leer datos desde un archivo de texto llamado datos.txt. La ruta /guardar?dato=... recibe un parámetro dato, obtiene la IP del cliente (considerando X-Forwarded-For si existe) y la fecha/hora actual, y guarda todo en una sola línea con formato separado por ;. Por otro lado, la ruta /leer abre el archivo y regresa todo su contenido como texto plano. Finalmente, la app se ejecuta con host="0.0.0.0" para que sea accesible desde otros dispositivos en la red y en el puerto 5500. El código correspondiente se muestra en la sección 4.2.
+
+La estructura de carpetas debe organizarse como se muestra en la Figura 4. Tanto el archivo app.py como el archivo de texto datos.txt deben colocarse en la carpeta principal del proyecto (fuera de .vscode) si se desea que el programa guarde y lea el archivo de texto en la misma ubicación utilizada en el paso anterior.
+
+![Figura 4 — APP](assets/img/01-publicar/paginaWeb4.png)
+
+*Figura 4: Estructura del proyecto: archivos app.py y datos.txt en el directorio principal*
+
+**Nota:** En el código si el puerto configurado no funciona, prueba con otro. En este caso, se intentó primero con **5500** sin éxito y posteriormente con **5000**, el cual funcionó correctamente.
+
+
+### 4.2) app.py
 
 ```python
 # Step 1: Imports
@@ -134,9 +147,17 @@ if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000, debug=True)
 ```
 
+## 5) Registro y consulta de datos desde el navegador
 
-## 5) datos
+A continuación se muestra cómo utilizar las rutas del sistema para guardar y leer información en el archivo de texto.
+La URL http://192.168.0.182:5000/guardar?dato=pruebacasa realiza una petición GET al servidor que está corriendo en la IP 192.168.0.182 y en el puerto 5000 (definido al ejecutar Flask). La ruta /guardar activa la función guardar() del programa y el parámetro dato=pruebacasa (lo que va después de ?) es el valor que se quiere registrar, al entrar a esa ruta, el servidor toma ese dato, obtiene la IP del cliente y la hora, y lo guarda como una nueva línea en datos.txt. En la Figura 5 se observa el proceso de guardado, donde el dato se registra siguiendo la estructura definida en el paso anterior.
 
- hola http://172.22.26.148:5000/guardar?dato=hola se agregue el dato 
+![Figura 5 — save](assets/img/01-publicar/paginaWeb5.png)
 
-y cuando haga http://172.22.26.148:5000/leer se lea
+*Figura 5: Ejemplo de guardado de un dato mediante la ruta /guardar*
+
+En cambio, http://192.168.0.182:5000/leer llama la ruta /leer, que ejecuta la función leer() y simplemente lee el contenido completo del archivo datos.txt para mostrarlo en el navegador como texto plano. En la Figura 6 se presenta la lectura del archivo y su contenido, lo cual permite visualizar de forma clara toda la información almacenada.
+
+![Figura 6 — read](assets/img/01-publicar/paginaWeb6.png)
+
+*Figura 6: Visualización del contenido del archivo datos.txt al acceder a la ruta /leer*
