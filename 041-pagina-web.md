@@ -8,7 +8,11 @@ permalink: /servicio-web/pagina-web/
 
 # Práctica 1: Página Web
 
-```HTML
+
+ hola http://172.22.26.148:5000/guardar?dato=hola se agregue el dato 
+
+y cuando haga http://172.22.26.148:5000/leer se lea
+
 <!doctype html>
 <html>
 <head>
@@ -19,7 +23,6 @@ permalink: /servicio-web/pagina-web/
     <p>Este es mi primer proyecto web con HTML + CSS + JS.</p>
 </body>
 </html>
-```
 
 ```Python
 # Step 1: Imports
