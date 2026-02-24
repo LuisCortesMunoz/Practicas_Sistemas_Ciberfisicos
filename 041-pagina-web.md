@@ -34,7 +34,7 @@ permalink: /servicio-web/pagina-web/
 
 ## app
 
-```pyhton
+```python
 # Step 1: Imports
 from flask import Flask, request
 from datetime import datetime
