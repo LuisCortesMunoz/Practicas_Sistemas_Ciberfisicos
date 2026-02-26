@@ -114,33 +114,17 @@ if (cmd == "LED_ON") {
 
 La confirmación enviada de regreso es crucial para garantizar sincronización.
 
----
+## Descargar
 
-## 6. Arquitectura del Sistema
+[Descargar código Arduino (Esp32PyQt6.ino)]({{ site.baseurl }}/assets/files/Esp32PyQt6.ino)
 
-El sistema implementado sigue un modelo ciberfísico donde:
-
-* La GUI representa el sistema digital.
-* El ESP32 representa el sistema físico.
-* Bluetooth actúa como canal de comunicación.
-
-```
-Usuario → GUI → Bluetooth → ESP32 → LED
-                        ↑
-                        Confirmación
-```
-
-Este flujo asegura coherencia entre ambos dominios.
-
----
-
-## 7. Funcionamiento del Código PyQt6
+## 6. Funcionamiento del Código PyQt6
 
 La aplicación desarrollada en PyQt6 se basa en un modelo de programación orientado a eventos, el cual es característico de las interfaces gráficas modernas. En este paradigma, el flujo del programa no se ejecuta de manera secuencial continua, sino que responde a eventos generados por el usuario (como clics en botones) o por el sistema (como temporizadores o llegada de datos desde un puerto de comunicación).
 
 Este enfoque resulta particularmente adecuado para aplicaciones que interactúan con hardware, ya que permite mantener la interfaz responsiva mientras se realizan tareas de comunicación asincrónica.
 
-### 7.1 Lectura No Bloqueante del Puerto Serial
+### 6.1 Lectura No Bloqueante del Puerto Serial
 
 Para la recepción de datos provenientes del ESP32 se emplea un temporizador (`QTimer`) que ejecuta periódicamente una función encargada de revisar el buffer del puerto serial. Este mecanismo implementa una estrategia de lectura no bloqueante, lo que significa que la aplicación no se detiene esperando datos, sino que consulta de forma periódica si existen nuevos bytes disponibles.
 
@@ -150,7 +134,7 @@ El uso de `QTimer` permite desacoplar la comunicación serial del renderizado de
 
 Además, este enfoque facilita la escalabilidad del sistema, ya que se pueden agregar más tareas periódicas sin afectar la estabilidad general del programa.
 
-### 7.2 Confirmación de Estados del Sistema
+### 6.2 Confirmación de Estados del Sistema
 
 El sistema implementa un mecanismo de confirmación basado en mensajes de retorno enviados por el ESP32 (`LED_ON_OK` y `LED_OFF_OK`). La interfaz gráfica no actualiza el estado del LED virtual inmediatamente después de enviar un comando, sino únicamente cuando recibe la confirmación correspondiente.
 
@@ -165,7 +149,7 @@ Si la GUI cambiara el estado visual sin confirmación:
 
 El mecanismo de confirmación convierte la comunicación en un proceso robusto basado en solicitud–respuesta, mejorando la tolerancia a fallos.
 
-### 7.3 Manejo de Eventos de Usuario
+### 6.3 Manejo de Eventos de Usuario
 
 Los botones de la interfaz generan eventos que son capturados por PyQt6 y asociados a funciones específicas mediante señales y slots. Cuando el usuario interactúa con un botón, se emite una señal que activa la función encargada de enviar el comando correspondiente al ESP32.
 
@@ -173,7 +157,7 @@ Este modelo desacopla la lógica de interfaz de la lógica de comunicación, lo 
 
 Desde la perspectiva de sistemas ciberfísicos, estos eventos representan la interacción humano–máquina, donde una acción del usuario desencadena una modificación en el sistema físico a través de la capa de comunicación.
 
-### 7.4 Integración de Componentes
+### 6.4 Integración de Componentes
 
 El funcionamiento completo del código PyQt6 se puede entender como la interacción coordinada de tres subsistemas:
 
@@ -193,7 +177,10 @@ En conjunto, el diseño implementado garantiza:
 
 Estos principios son esenciales en el desarrollo de aplicaciones que interactúan con hardware en tiempo real.
 
-## 8. Resultados
+## Descargar
+[Descargar código PyQt6(PyQt6.py)]({{ site.baseurl }}/assets/files/PyQt6.py)
+
+## 7. Resultados
 
 El sistema logró establecer comunicación bidireccional estable entre la interfaz gráfica y el ESP32. El control del LED físico se realiza en tiempo real y el LED virtual refleja correctamente el estado del hardware.
 
@@ -205,3 +192,8 @@ La implementación demostró:
 * Confirmación confiable.
 * Integración hardware-software.
 
+### 7.1 Video
+<video controls width="720">
+  <source src="{{ '/assets/videos/PyQt6.mp4' | relative_url }}" type="video/mp4">
+  Tu navegador no soporta video HTML5.
+</video>
