@@ -265,5 +265,3 @@ El sistema desarrollado demuestra la viabilidad de construir aplicaciones robust
 * Control PWM
 * Aplicación ejecutable
 * Reconexión automática
-
----
