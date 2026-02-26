@@ -134,21 +134,62 @@ Este flujo asegura coherencia entre ambos dominios.
 
 ## 7. Funcionamiento del Código PyQt6
 
-El programa sigue un modelo orientado a eventos:
+La aplicación desarrollada en PyQt6 se basa en un modelo de programación orientado a eventos, el cual es característico de las interfaces gráficas modernas. En este paradigma, el flujo del programa no se ejecuta de manera secuencial continua, sino que responde a eventos generados por el usuario (como clics en botones) o por el sistema (como temporizadores o llegada de datos desde un puerto de comunicación).
 
-### Lectura No Bloqueante
+Este enfoque resulta particularmente adecuado para aplicaciones que interactúan con hardware, ya que permite mantener la interfaz responsiva mientras se realizan tareas de comunicación asincrónica.
 
-Se utiliza `QTimer` para consultar periódicamente el puerto serial sin bloquear la interfaz. Esto es necesario porque las GUIs deben permanecer responsivas.
+### 7.1 Lectura No Bloqueante del Puerto Serial
 
-### Confirmación de Estados
+Para la recepción de datos provenientes del ESP32 se emplea un temporizador (`QTimer`) que ejecuta periódicamente una función encargada de revisar el buffer del puerto serial. Este mecanismo implementa una estrategia de lectura no bloqueante, lo que significa que la aplicación no se detiene esperando datos, sino que consulta de forma periódica si existen nuevos bytes disponibles.
 
-La GUI no cambia el LED virtual hasta recibir confirmación del ESP32. Esto evita inconsistencias si ocurre pérdida de datos.
+Desde el punto de vista del diseño de software, esta decisión es fundamental porque el hilo principal de PyQt6 está dedicado al manejo de la interfaz gráfica. Si se utilizara una lectura bloqueante del puerto serial, el hilo principal quedaría suspendido hasta recibir datos, provocando congelamientos en la interfaz y una mala experiencia de usuario.
 
-### Manejo de Eventos
+El uso de `QTimer` permite desacoplar la comunicación serial del renderizado de la interfaz, garantizando que la GUI continúe respondiendo a eventos del usuario mientras se monitorea la llegada de información desde el ESP32.
 
-Los botones generan eventos que envían comandos al microcontrolador.
+Además, este enfoque facilita la escalabilidad del sistema, ya que se pueden agregar más tareas periódicas sin afectar la estabilidad general del programa.
 
----
+### 7.2 Confirmación de Estados del Sistema
+
+El sistema implementa un mecanismo de confirmación basado en mensajes de retorno enviados por el ESP32 (`LED_ON_OK` y `LED_OFF_OK`). La interfaz gráfica no actualiza el estado del LED virtual inmediatamente después de enviar un comando, sino únicamente cuando recibe la confirmación correspondiente.
+
+Esta decisión responde a principios fundamentales de sistemas distribuidos y sistemas ciberfísicos, donde la consistencia entre el estado físico y su representación digital debe garantizarse explícitamente.
+
+Si la GUI cambiara el estado visual sin confirmación:
+
+- Podría mostrarse un LED encendido cuando físicamente no lo está.
+- Se perdería coherencia entre dominios.
+- No se podrían detectar errores de comunicación.
+- Se comprometería la confiabilidad del sistema.
+
+El mecanismo de confirmación convierte la comunicación en un proceso robusto basado en solicitud–respuesta, mejorando la tolerancia a fallos.
+
+### 7.3 Manejo de Eventos de Usuario
+
+Los botones de la interfaz generan eventos que son capturados por PyQt6 y asociados a funciones específicas mediante señales y slots. Cuando el usuario interactúa con un botón, se emite una señal que activa la función encargada de enviar el comando correspondiente al ESP32.
+
+Este modelo desacopla la lógica de interfaz de la lógica de comunicación, lo cual mejora la organización del código y facilita su mantenimiento. Además, permite extender la funcionalidad del sistema sin modificar la estructura base de la aplicación.
+
+Desde la perspectiva de sistemas ciberfísicos, estos eventos representan la interacción humano–máquina, donde una acción del usuario desencadena una modificación en el sistema físico a través de la capa de comunicación.
+
+### 7.4 Integración de Componentes
+
+El funcionamiento completo del código PyQt6 se puede entender como la interacción coordinada de tres subsistemas:
+
+1. Interfaz gráfica → Manejo de eventos del usuario.
+2. Comunicación serial → Envío y recepción de datos.
+3. Representación visual → Reflejo del estado físico.
+
+La correcta integración de estos elementos permite que el sistema opere de manera estable y coherente, asegurando que la información fluya correctamente entre el usuario y el dispositivo embebido.
+
+En conjunto, el diseño implementado garantiza:
+
+- Responsividad de la interfaz.
+- Consistencia de estados.
+- Comunicación confiable.
+- Modularidad del código.
+- Escalabilidad del sistema.
+
+Estos principios son esenciales en el desarrollo de aplicaciones que interactúan con hardware en tiempo real.
 
 ## 8. Resultados
 
