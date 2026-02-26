@@ -45,7 +45,8 @@ La GUI se organizó en tres bloques funcionales:
 Esta separación modular permite claridad en la interacción y facilita el mantenimiento del código.
 
 ![Interfaz](assets/img/01-publicar/InterfazPyQt6.png)
-*Figura 1:* Pantalla inicial de configuración en el software KiCAD.
+*Figura 1:* Interfaz gráfica desarrollada en PyQt6 para el control del LED del ESP32 mediante comunicación Bluetooth.
+
 
 La interfaz incluye un LED virtual implementado con `QPainter`, el cual refleja visualmente el estado del LED físico del ESP32. Esto mejora la interacción humano-máquina y permite validar visualmente la comunicación.
 
@@ -70,12 +71,11 @@ La selección del puerto COM correcto es fundamental, ya que el sistema operativ
 
 Solo el COM saliente permite iniciar comunicación desde la PC.
 
-![Emparejamiento](assets/img/01-publicar/PyQt_configuracion.png)
-*Figura 1:* Pantalla inicial de configuración en el software KiCAD.
-
 ![Puertos](assets/img/01-publicar/configu_COM.png)
-*Figura 1:* Pantalla inicial de configuración en el software KiCAD.
+*Figura 2:* Identificación del puerto COM saliente asignado al ESP32 para la comunicación serial Bluetooth.
 
+![Emparejamiento](assets/img/01-publicar/PyQt_configuracion.png)
+*Figura 3:* Emparejamiento del dispositivo ESP32 mediante Bluetooth en el sistema operativo.
 ---
 
 ## 5. Programación del ESP32
