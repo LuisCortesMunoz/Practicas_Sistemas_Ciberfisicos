@@ -71,11 +71,13 @@ La selección del puerto COM correcto es fundamental, ya que el sistema operativ
 
 Solo el COM saliente permite iniciar comunicación desde la PC.
 
-![Puertos](assets/img/01-publicar/configu_COM.png)
+![Puertos](assets/img/01-publicar/PyQt_configuracion.png)
 *Figura 2:* Identificación del puerto COM saliente asignado al ESP32 para la comunicación serial Bluetooth.
 
-![Emparejamiento](assets/img/01-publicar/PyQt_configuracion.png)
+![Emparejamiento](assets/img/01-publicar/configu_COM.png)
+
 *Figura 3:* Emparejamiento del dispositivo ESP32 mediante Bluetooth en el sistema operativo.
+
 ---
 
 ## 5. Programación del ESP32
