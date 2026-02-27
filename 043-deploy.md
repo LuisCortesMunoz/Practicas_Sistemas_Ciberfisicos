@@ -430,13 +430,15 @@ Finalmente, el código de Arduino y el archivo app.js mantienen la misma lógica
 const API_BASE = "https://docker-flask-servidor-render.onrender.com";
 ```
 
-```arduino
+````md
+```Arduino
 // Render base (sin /api/...)
 const char* RENDER_BASE = "https://docker-flask-servidor-render.onrender.com";
 
 // Endpoint que SÍ existe en tu Render
 const char* STATE_PATH = "/api/state_leds";
 ```
+````
 
 Código disponible para descargar del programa en Arduino, ya con la modificación aplicada.
 
