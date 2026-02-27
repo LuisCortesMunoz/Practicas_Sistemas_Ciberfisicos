@@ -24,20 +24,38 @@ Este programa crea un servidor Flask local que sirve la página web desde la car
 [Descargar código Python (app.py)]({{ site.baseurl }}/assets/files/app.py)
 
 ### 1.3) Frontend del panel de control (HTML, CSS y JavaScript) servido desde la carpeta static
-Estos archivos corresponden al frontend que Flask sirve desde la carpeta static. El archivo index.html define la estructura del panel de control (título, botones y selector de color) que se muestra en el navegador. styles.css se encarga del diseño visual, como colores de fondo, tamaños, espaciado, estilo de botones y el área de mensajes, para que la interfaz sea clara y fácil de usar. Finalmente, app.js contiene la lógica: detecta los clics en All ON / All OFF y en cada LED, guarda el estado seleccionado y envía solicitudes HTTP (POST) a los endpoints de Flask para actualizar el color y qué LEDs deben encenderse, además, puede mandar automáticamente los cambios cuando el usuario modifica el color, logrando una respuesta más inmediata en la tira. A continuación se presenta la carpeta con los archivos previamente explicados (.html, .css y .js), listos para su descarga.
+Estos archivos corresponden al frontend que Flask sirve desde la carpeta static. 
+
+- **`index.html`**: Define la estructura del panel de control (título, botones y selector de color) que se muestra en el navegador.
+
+- **`styles.css`**: Se encarga del diseño visual, como colores de fondo, tamaños, espaciado, estilo de botones y el área de mensajes, para que la interfaz sea clara y fácil de usar.
+
+- **`app.js`**: contiene la lógica: detecta los clics en All ON / All OFF y en cada LED, guarda el estado seleccionado y envía solicitudes HTTP (POST) a los endpoints de Flask para actualizar el color y qué LEDs deben encenderse, además, puede mandar automáticamente los cambios cuando el usuario modifica el color, logrando una respuesta más inmediata en la tira.
+
+A continuación se presenta la carpeta con los archivos previamente explicados (.html, .css y .js), listos para su descarga.
 
 ###  Descargar
 [Descargar códigos Frontend]({{site.baseurl }}/assets/files/static.zip)
 
 ### 1.4)  Backend del sistema: estado actual (state.json) e historial de cambios (history.jsonl)
-La carpeta data se utiliza para persistir información del sistema, es decir, para que no se pierda cuando el servidor Flask se reinicia. El archivo state.json guarda el estado actual que debe aplicar el ESP32, como el color seleccionado, cuántos LEDs deben estar encendidos (o el arreglo de LEDs, según tu versión), el contador de cambios (rev) y la marca de tiempo (updated_at). Por otro lado, history.jsonl funciona como un registro histórico en formato “JSON por línea”, donde cada actualización puede guardarse como un evento independiente (por ejemplo: fecha/hora, IP del usuario, color y acción), lo que permite auditar cambios, depurar errores y analizar cómo se ha utilizado el panel a lo largo del tiempo. A continuación, se encuentra disponible para descarga la carpeta con los archivos JSON y JSONL.
+La carpeta data se utiliza para persistir información del sistema, es decir, para que no se pierda cuando el servidor Flask se reinicia. 
+
+- **`state.json`**: Guarda el estado actual que debe aplicar el ESP32, como el color seleccionado, cuántos LEDs deben estar encendidos (o el arreglo de LEDs, según tu versión), el contador de cambios (rev) y la marca de tiempo (updated_at). 
+
+- **`history.jsonl`**: Funciona como un registro histórico en formato “JSON por línea”, donde cada actualización puede guardarse como un evento independiente (por ejemplo: fecha/hora, IP del usuario, color y acción), lo que permite auditar cambios, depurar errores y analizar cómo se ha utilizado el panel a lo largo del tiempo. 
+
+A continuación, se encuentra disponible para descarga la carpeta con los archivos JSON y JSONL.
 
 ###  Descargar
 [Descargar códigos Backend]({{site.baseurl }}/assets/files/state.zip)
 
 ### 1.5)  Configuración del ESP32 en Arduino para sincronización con Flask y control de la tira WS2812 vía Wi-Fi
 
-El último paso antes de obtener los resultados consiste en programar el ESP32 en Arduino para que se conecte a la red Wi-Fi y consulte al servidor Flask el estado más reciente de la tira LED. En este código, lo más importante es configurar correctamente las credenciales de red (WIFI_SSID y WIFI_PASS) y la dirección del servidor donde corre Flask, es decir, la IP de la compu y se puede vualizar con ipconfig en la terminal y el puerto (SERVER_PORT, en este caso 5500). Una vez conectado, el ESP32 realiza una solicitud periódica a la ruta /api/state, recibe un JSON con el color (#RRGGBB), la cantidad de LEDs a encender (count) y un contador de cambios (rev). Con esta información, el microcontrolador convierte el color hexadecimal a valores RGB, actualiza los primeros count LEDs de la tira WS2812 (apagando el resto) y únicamente aplica cambios cuando detecta un rev nuevo, evitando actualizaciones innecesarias. De esta forma, el hardware queda sincronizado con el panel web y refleja en tiempo real los comandos enviados al backend. A continuación se encuentra disponible el código en Arduino para programar el ESP32 y controlar el encendido de la tira de LEDs.
+El último paso antes de obtener los resultados consiste en programar el ESP32 en Arduino para que se conecte a la red Wi-Fi y consulte al servidor Flask el estado más reciente de la tira LED. En este código, lo más importante es configurar correctamente las credenciales de red (WIFI_SSID y WIFI_PASS) y la dirección del servidor donde corre Flask, es decir, la IP de la compu y se puede vualizar con ipconfig en la terminal y el puerto (SERVER_PORT, en este caso 5500). Una vez conectado, el ESP32 realiza una solicitud periódica a la ruta /api/state, recibe un JSON con el color (#RRGGBB), la cantidad de LEDs a encender (count) y un contador de cambios (rev). 
+
+Con esta información, el microcontrolador convierte el color hexadecimal a valores RGB, actualiza los primeros count LEDs de la tira WS2812 (apagando el resto) y únicamente aplica cambios cuando detecta un rev nuevo, evitando actualizaciones innecesarias. De esta forma, el hardware queda sincronizado con el panel web y refleja en tiempo real los comandos enviados al backend. 
+
+A continuación se encuentra disponible el código en Arduino para programar el ESP32 y controlar el encendido de la tira de LEDs.
 
 ###  Descargar
 [Descargar código Arduino (localFlask.ino)]({{ site.baseurl }}/assets/files/localFlask.ino)
@@ -228,6 +246,7 @@ En la Figura 3 se muestra la interfaz gráfica del sistema en funcionamiento.
 ![Figura 3 — Interfaz del panel web](assets/img/01-publicar/Frontend.jpeg)
 
 *Figura 3: Interfaz del panel web ejecutándose en la PC B, mostrando el control del color, cantidad de LEDs y el registro de comunicación con el backend.*
+
 ---
 ## Descargar
 
@@ -331,7 +350,7 @@ Primero, como ya se explicó, los archivos del frontend se encargan de construir
 
 Posteriormente, se debe generar la liga pública del sitio utilizando GitHub Pages. Para ello, dentro del repositorio se selecciona el ícono de engrane Settings (parte superior) y, en el menú lateral izquierda, se ingresa a la sección Pages. Ahí se configura el despliegue seleccionando la rama Main y la carpeta Root, y finalmente se guarda la configuración, tal como se muestra en la Figura 4. Después, se regresa a la página principal del repositorio y, en el apartado About (lado derecho), se presiona el engrane para habilitar la opción “Use your GitHub Pages website”. Con esto, la liga del sitio web queda disponible para acceder a la interfaz de control desde el navegador.
 
-![Figura 4 — Interfaz del panel web](assets/img/01-publicar/creacionLigaGit.png)
+![Figura 4 — Configuración de GitHub Pages](assets/img/01-publicar/creacionLigaGit.png)
 
 *Figura 4: Configuración de GitHub Pages: selección de la rama Main y carpeta Root para publicar la interfaz web del proyecto.*
 
@@ -354,3 +373,94 @@ A continuación, se incluye la carpeta en formato .zip con todos los archivos ne
 ### Backend: Carpeta con los archivos de Docker Flask
 
 [Descargar códigos Backend]({{site.baseurl }}/assets/files/led-git-front-flask-back-docker--main.zip)
+
+### 3.5) Creación de cuenta en Render y vinculación con GitHub
+
+A continuación se describe la configuración inicial en Render. Primero, si aún no se cuenta con una cuenta, es necesario crearla. Para ello, se selecciona la opción “Get Started” en la esquina superior derecha, lo que redirige a la pantalla mostrada en la Figura 5. Es importante registrarse o iniciar sesión utilizando GitHub, ya que esto permite vincular la cuenta y seleccionar el repositorio creado en el paso 3.4 para realizar el despliegue del backend.
+
+![Figura 5 — Pantalla de inicio](assets/img/01-publicar/cuentaRender.png)
+
+*Figura 5: Pantalla de inicio de Render para crear una cuenta mediante GitHub y poder vincular el repositorio del proyecto.*
+
+### 3.6) Creación de un Web Service en Render y selección del repositorio
+
+Posteriormente, una vez iniciada la sesión en Render, se debe seleccionar la opción New y luego Web Service, tal como se muestra en la Figura 6. 
+
+![Figura 6 — Menú de Render](assets/img/01-publicar/render2.png)
+
+*Figura 6: Menú de Render para crear un nuevo servicio seleccionando New → Web Service.*
+
+Esta acción redirige a la pantalla presentada en la Figura 7, donde se debe elegir el repositorio previamente creado y explicado en el paso 3.4, el cual contiene los archivos necesarios para desplegar el backend.
+
+![Figura 7 — Pantalla de Render](assets/img/01-publicar/render3.png)
+
+*Figura 7: Pantalla de Render para seleccionar el repositorio de GitHub que se desplegará como Web Service (paso 3.4).*
+
+### 3.7) Configuración del Web Service en Render y despliegue con Docker
+
+Como se observa en la Figura 8, el siguiente paso es configurar el Web Service en Render. Es fundamental verificar que se haya seleccionado el repositorio correcto. Posteriormente, en la opción de Runtime/Language se debe elegir Docker, confirmar que la rama sea Main, y en Instance Type seleccionar el plan gratuito. Una vez completada esta configuración, se desciende al final de la página y se presiona el botón Deploy Web Service para iniciar el despliegue del servidor.
+
+![Figura 8 — Configuración del Web Service](assets/img/01-publicar/render4.png)
+
+*Figura 8: Configuración del Web Service en Render: selección del repositorio, runtime Docker, rama Main y plan Free, previo al despliegue.*
+
+
+### 3.8) Despliegue de Render
+
+Finalmente, si todo está correctamente configurado y se siguieron los pasos anteriores, aparecerá un mensaje como el que se muestra en la Figura 9 indicando que el servicio está Live y que la aplicación ya se encuentra disponible en su URL principal. Esto confirma que el despliegue se realizó de forma exitosa y que el servidor Flask está corriendo correctamente en Render. Es importante guardar ese enlace, ya que se utilizará en los siguientes pasos para conectarlo con el frontend y para que el ESP32 consulte el estado de los LEDs mediante las rutas de la API.
+
+![Figura 9 — Confirmación de despliegue exitoso en Render](assets/img/01-publicar/render6.png)
+
+*Figura 9: Confirmación de despliegue exitoso en Render: el servicio aparece como Live y se muestra la URL pública del backend, la cual se usará en los pasos posteriores.*
+
+
+### 3.9) Reactivar el servicio en Render
+
+Debido a que se está utilizando el plan gratuito de Render, el servicio puede detenerse automáticamente tras un periodo de inactividad. Por ello, si se cierra Render o el servidor deja de responder, es necesario volver a desplegarlo. Para hacerlo, se ingresa a la cuenta de Render, se selecciona el proyecto creado y se accede al repositorio correspondiente. Posteriormente, aparecerá una pantalla como la mostrada en la Figura 10, donde se debe presionar Deploy latest commit para reactivar el servicio con la versión más reciente del código.
+
+![Figura 10 — Panel del servicio](assets/img/01-publicar/render5.png)
+
+*Figura 10: Panel del servicio en Render para reactivar el despliegue seleccionando Deploy latest commit en el plan gratuito.*
+
+### 3.10) Actualización de enlaces en Arduino y app.js para usar Render
+
+Finalmente, el código de Arduino y el archivo app.js mantienen la misma lógica descrita en los pasos anteriores, sin embargo, la diferencia principal es que ahora se debe utilizar la URL pública de Render obtenida en el paso 3.8 en ambos casos. Esto permite que el frontend envíe las solicitudes al servidor desplegado y que el ESP32 consulte el estado de los LEDs desde la nube. A continuación se muestran los fragmentos de código donde se realiza estos cambios.
+
+```javascript
+const API_BASE = "https://docker-flask-servidor-render.onrender.com";
+```
+
+```arduino
+// Render base (sin /api/...)
+const char* RENDER_BASE = "https://docker-flask-servidor-render.onrender.com";
+
+// Endpoint que SÍ existe en tu Render
+const char* STATE_PATH = "/api/state_leds";
+```
+
+Código disponible para descargar del programa en Arduino, ya con la modificación aplicada.
+
+###  Descargar
+[Descargar código Arduino (tiraLedRender.ino)]({{ site.baseurl }}/assets/files/tiraLedRender.ino)
+
+### 3.11) Resultados
+
+Finalmente, para realizar el cambio de color y el control de la tira LED, se debe ingresar a la liga de GitHub Pages creada en el paso 3.2. Al abrirla, se mostrará una interfaz similar a la de la Figura 11, desde la cual es posible seleccionar el color con el que se iluminará la tira, encender o apagar LEDs individuales según su posición y utilizar las opciones All ON y All OFF para activar o desactivar todos los LEDs de manera inmediata.
+
+![Figura 11 — nterfaz del panel de control](assets/img/01-publicar/imagen_pagina.png)
+
+*Figura 11: Interfaz del panel de control en GitHub Pages para seleccionar color y encender/apagar LEDs individuales o todos a la vez.*
+
+ Cada cambio realizado en la interfaz se envía al backend (Docker + Flask en Render), donde el estado queda almacenado. Además, como se muestra en la Figura 12, es posible monitorear el último estado registrado accediendo al enlace del servidor seguido de /api/state_leds, lo que permite visualizar el color seleccionado y el patrón/cantidad de LEDs encendidos en ese momento.
+
+![Figura 12 — Consulta del estado en Render](assets/img/01-publicar/docker-flask.png)
+
+*Figura 12: Consulta del estado en Render mediante el endpoint /api/state_leds, mostrando el último color y el estado de los LEDs.*
+
+Este video muestra los resultados obtenidos y evidencia cómo la tira de LEDs responde a los cambios realizados desde la página web, encendiéndose y modificando su color en tiempo real.
+
+### Video
+<video controls width="720">
+  <source src="{{ '/assets/videos/videoRender.mp4' | relative_url }}" type="video/mp4">
+  Tu navegador no soporta video HTML5.
+</video>
