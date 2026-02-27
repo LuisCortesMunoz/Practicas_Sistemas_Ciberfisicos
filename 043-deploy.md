@@ -52,7 +52,257 @@ Para finalizar, después de cargar el código en el ESP32, se debe ejecutar el s
 
 ## 2) Servidor Flask + Servidor Front (Html)
 
-### 2.1)
+### 2.1) Arquitectura general del sistema
+
+El sistema desarrollado consiste en una arquitectura distribuida basada en un modelo cliente–servidor diseñado para el control remoto de una tira LED WS2812 mediante un microcontrolador ESP32 y una interfaz web. A diferencia de implementaciones locales donde todos los componentes se ejecutan en una sola máquina, en esta solución el frontend, el backend y el dispositivo físico operan como nodos independientes dentro de la misma red.
+
+La arquitectura se compone de tres elementos principales:
+
+* **Frontend (PC B)** → interfaz de usuario
+* **Backend Flask (PC A)** → servidor y API
+* **ESP32** → dispositivo actuador
+* **WS2812** → sistema físico controlado
+
+El flujo operativo del sistema puede describirse como:
+
+Frontend → HTTP → Flask → JSON → ESP32 → LEDs
+
+Esta separación permite simular un entorno IoT real donde múltiples clientes pueden interactuar con un servidor central que administra el estado del sistema y distribuye comandos hacia dispositivos físicos.
+
+---
+
+### 2.2) Desarrollo del backend con Flask
+
+El backend fue implementado utilizando el framework Flask en Python, el cual proporciona una plataforma ligera para construir APIs REST. El servidor actúa como intermediario entre la interfaz web y el hardware, almacenando el estado del sistema y exponiendo endpoints accesibles desde cualquier dispositivo de la red.
+
+El servidor se inicializa mediante:
+
+```python
+from flask import Flask, request, jsonify
+from flask_cors import CORS
+
+app = Flask(__name__)
+CORS(app)
+```
+
+La activación de **CORS** resulta fundamental en esta arquitectura, ya que permite que el frontend, ejecutándose en otra computadora, pueda realizar solicitudes HTTP sin restricciones de seguridad del navegador.
+
+El backend define dos endpoints principales:
+
+### Endpoint de lectura del estado
+
+```python
+@app.get("/api/state")
+def get_state():
+    return jsonify(load_state())
+```
+
+Este endpoint permite que cualquier cliente consulte el estado actual del sistema, el cual incluye:
+
+* color en formato hexadecimal
+* número de LEDs activos
+* contador de revisiones
+* marca temporal
+
+---
+
+### Endpoint de actualización del sistema
+
+```python
+@app.post("/api/state")
+def set_state():
+    data = request.get_json()
+    color = data.get("color")
+    count = data.get("count")
+    return jsonify(save_state(color, count))
+```
+
+Este método procesa las solicitudes enviadas por el frontend, valida los datos recibidos y actualiza el estado persistente del sistema.
+
+---
+
+### 2.3) Persistencia del estado y sincronización
+
+Una característica esencial del backend es la persistencia del estado mediante el archivo:
+
+```
+data/state.json
+```
+
+Este archivo actúa como una memoria compartida entre el servidor y el ESP32, permitiendo que el sistema mantenga su configuración incluso después de reinicios. La estructura del estado incluye:
+
+```
+{
+ "color":"#ee00ff",
+ "count":4,
+ "rev":116,
+ "updated_at":"2026-02-25T17:38:10"
+}
+```
+
+El campo `rev` cumple una función crítica en la sincronización, ya que permite detectar cambios reales y evitar actualizaciones redundantes en el dispositivo físico.
+
+---
+
+### 2.4) Ejecución del servidor Flask
+
+El servidor se ejecuta utilizando el comando:
+
+```bash
+python app.py
+```
+
+y se configura para aceptar conexiones externas mediante:
+
+```python
+app.run(host="0.0.0.0", port=5000)
+```
+
+El uso de `0.0.0.0` permite que el backend sea accesible desde cualquier dispositivo en la red local, incluyendo la PC B y el ESP32.
+
+---
+
+## ### 1.5) Desarrollo del frontend web
+
+El frontend fue desarrollado empleando tecnologías web estándar:
+
+* HTML para la estructura
+* CSS para el diseño
+* JavaScript para la lógica
+
+La interfaz proporciona un panel de control interactivo que permite modificar el color y la cantidad de LEDs encendidos en tiempo real.
+
+El elemento principal de control se implementa mediante:
+
+```javascript
+const BACKEND_BASE = "http://IP_PC_A:5000";
+```
+
+Este parámetro establece la conexión directa con el backend Flask, permitiendo que todas las acciones del usuario se traduzcan en solicitudes HTTP.
+
+---
+
+### Envío automático de comandos
+
+El frontend detecta cambios en la interfaz utilizando eventos:
+
+```javascript
+colorPicker.addEventListener("input", sendState)
+countRange.addEventListener("input", sendState)
+```
+
+Cuando el usuario modifica el color o el número de LEDs, se ejecuta una solicitud POST:
+
+```javascript
+fetch(`${BACKEND_BASE}/api/state`,{
+ method:"POST",
+ headers:{"Content-Type":"application/json"},
+ body:JSON.stringify({color,count})
+})
+```
+
+Esto permite una interacción inmediata y elimina la necesidad de botones manuales, logrando un control fluido en tiempo real.
+
+En la Figura 2 se muestra la ejecución del servidor HTTP local que permite servir los archivos del frontend.
+
+![Figura 2 — Servidor Frontend](assets/img/01-publicar/FrontendCmd.jpeg)
+
+*Figura 2: Ejecución del servidor HTTP en la PC B mediante el comando python -m http.server 8000 --bind 0.0.0.0.*
+
+---
+
+### 2.6) Comunicación entre frontend y backend
+
+La comunicación entre el frontend y el backend se basa en el protocolo HTTP utilizando JSON como formato de intercambio de datos. Esta estrategia presenta múltiples ventajas:
+
+* independencia de plataforma
+* simplicidad de integración
+* escalabilidad
+* compatibilidad con IoT
+
+El backend actúa como un punto centralizado de control que puede recibir comandos desde múltiples clientes simultáneamente.
+
+En la Figura 3 se muestra la interfaz gráfica del sistema en funcionamiento.
+
+![Figura 3 — Interfaz del panel web](assets/img/01-publicar/Frontend.jpeg)
+
+*Figura 3: Interfaz del panel web ejecutándose en la PC B, mostrando el control del color, cantidad de LEDs y el registro de comunicación con el backend.*
+---
+
+### 2.7) Programación del ESP32 y control de la tira WS2812
+
+El ESP32 fue programado en el entorno Arduino para actuar como cliente del servidor Flask y como controlador directo de la tira LED WS2812.
+
+El dispositivo establece conexión Wi-Fi mediante:
+
+```cpp
+WiFi.begin(WIFI_SSID, WIFI_PASS);
+```
+
+Posteriormente, consulta periódicamente el estado del sistema utilizando solicitudes HTTP:
+
+```cpp
+HTTPClient http;
+http.begin("http://IP_PC_A:5000/api/state");
+int code = http.GET();
+```
+
+---
+
+### Recepción y procesamiento del JSON
+
+El ESP32 recibe un JSON que contiene el estado del sistema:
+
+```
+{"color":"#ee00ff","count":4,"rev":116}
+```
+
+Este se procesa mediante:
+
+```cpp
+DynamicJsonDocument doc(512);
+deserializeJson(doc,http.getString());
+```
+
+---
+
+### Conversión de color y control físico
+
+El color hexadecimal se convierte a valores RGB y se aplica a la tira LED:
+
+```cpp
+uint32_t c = strip.Color(r,g,b);
+for(int i=0;i<count;i++){
+ strip.setPixelColor(i,c);
+}
+strip.show();
+```
+
+Este proceso permite que la tira LED refleje inmediatamente los cambios realizados desde la interfaz web.
+
+---
+
+### 2.8) Sincronización inteligente mediante revisión (rev)
+
+El uso del parámetro `rev` permite que el ESP32 solo actualice el sistema cuando detecta un cambio real en el estado, lo que reduce:
+
+* tráfico de red
+* consumo energético
+* latencia
+* procesamiento innecesario
+
+Este mecanismo es fundamental en sistemas IoT donde múltiples dispositivos pueden interactuar simultáneamente con un servidor central.
+
+---
+
+### 2.9) Integración completa del sistema
+
+La integración final del sistema demuestra una arquitectura IoT funcional en la que el usuario puede controlar un dispositivo físico a través de una interfaz web distribuida. La separación entre frontend, backend y hardware no solo mejora la modularidad del sistema, sino que también permite escalar la solución a entornos más complejos donde múltiples dispositivos y usuarios interactúan simultáneamente.
+
+El sistema implementado representa un ejemplo claro de interacción entre software, redes y hardware, destacando principios fundamentales de sistemas ciberfísicos y computación distribuida.
+
+### Video del funcionamiento
+<video controls width="720"> <source src="{{ '/assets/videos/Frontend_Backend2pc.mp4' | relative_url }}" type="video/mp4"> Tu navegador no soporta video HTML5. </video>
 
 ## 3) Docker Flask (Servidor Render)
 
