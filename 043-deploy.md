@@ -162,7 +162,7 @@ El uso de `0.0.0.0` permite que el backend sea accesible desde cualquier disposi
 
 ---
 
-## ### 1.5) Desarrollo del frontend web
+### 2.5) Desarrollo del frontend web
 
 El frontend fue desarrollado empleando tecnologías web estándar:
 
@@ -207,7 +207,7 @@ En la Figura 2 se muestra la ejecución del servidor HTTP local que permite serv
 
 ![Figura 2 — Servidor Frontend](assets/img/01-publicar/FrontendCmd.jpeg)
 
-*Figura 2: Ejecución del servidor HTTP en la PC B mediante el comando python -m http.server 8000 --bind 0.0.0.0.*
+*Figura 2:* Ejecución del servidor HTTP en la PC B mediante el comando python -m http.server 8000 --bind 0.0.0.0.
 
 ---
 
@@ -226,9 +226,17 @@ En la Figura 3 se muestra la interfaz gráfica del sistema en funcionamiento.
 
 ![Figura 3 — Interfaz del panel web](assets/img/01-publicar/Frontend.jpeg)
 
-*Figura 3: Interfaz del panel web ejecutándose en la PC B, mostrando el control del color, cantidad de LEDs y el registro de comunicación con el backend.*
+*Figura 3:* Interfaz del panel web ejecutándose en la PC B, mostrando el control del color, cantidad de LEDs y el registro de comunicación con el backend.
 ---
+## Descargar
 
+[Descargar código Python (app_seconf.py)]({{ site.baseurl }}/assets/files/app_seconf.py)
+
+[Descargar código CSS (styles.css)]({{ site.baseurl }}/assets/files/styles.css)
+
+[Descargar código HTML (index (2).html)]({{ site.baseurl }}/assets/files/index (2).html)
+
+[Descargar código JSON (app (2).js)]({{ site.baseurl }}/assets/files/app (2).js)
 ### 2.7) Programación del ESP32 y control de la tira WS2812
 
 El ESP32 fue programado en el entorno Arduino para actuar como cliente del servidor Flask y como controlador directo de la tira LED WS2812.
@@ -248,6 +256,10 @@ int code = http.GET();
 ```
 
 ---
+
+## Descargar
+
+[Descargar código Arduino (Practica4Auto3.ino)]({{ site.baseurl }}/assets/files/Practica4Auto3.ino)
 
 ### Recepción y procesamiento del JSON
 
