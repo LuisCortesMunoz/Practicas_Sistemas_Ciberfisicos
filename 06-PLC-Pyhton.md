@@ -57,7 +57,7 @@ Finalmente, se muestra a continuación la carpeta que contiene el programa compl
 
 ## 5.
 
-### 1.1) app.py
+### main.py
 
 ```python
 # Step 1: Import libraries
