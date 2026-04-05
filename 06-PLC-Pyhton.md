@@ -55,7 +55,27 @@ Finalmente, se muestra a continuación la carpeta que contiene el programa compl
 
 [Descargar programa escalera]({{site.baseurl }}/assets/files/practicaPLC.zip)
 
-## 5. Ejecución de la interfaz web para el control de la lámpara del PLC mediante pyhton
+## 5. Configuración de la comunicación Ethernet para cargar el programa al PLC
+
+1. Para cargar el programa al PLC, lo primero que se debe hacer es dar clic en la opción “Comunicaciones”, mostrada en la Figura 6 dentro del recuadro rojo, y posteriormente seleccionar “Configuración de controladores”.
+
+2. Después, se abrirá la primera ventana mostrada en la Figura 6. En la parte señalada con el recuadro azul, se deben desplegar las opciones, seleccionar “Ethernet Devices” y después dar clic en “Add New”.
+
+3. Una vez agregado el nuevo driver, se debe dar doble clic cuando aparezca en la sección de “Name” y “Description”. Esto desplegará la segunda ventana, en la cual se debe seleccionar “Add New”, opción marcada con el recuadro verde. 
+
+4. Posteriormente, se debe escribir la dirección IP correspondiente al PLC y, finalmente, dar clic en “Aceptar” para después cerrar ambas ventanas.
+
+![PLC6](assets/img/01-publicar/PLC7.png)
+*Figura 6:* Configuración del driver Ethernet y asignación de la dirección IP del PLC.
+
+Finalmente, en la Figura 7 se muestra, dentro del recuadro rojo, el botón de descarga, sobre el cual se debe dar clic. Después, se deben seguir los pasos indicados por el software: primero seleccionar el driver recién creado y dar clic en “Aceptar”; posteriormente, elegir la opción “Descargar programa **al** controlador lógico”.
+
+Si el programa en ladder está correctamente desarrollado, la descarga se realizará de manera exitosa en el PLC. Es importante llevar a cabo este procedimiento antes de crear y ejecutar el programa en Python.
+
+![PLC7](assets/img/01-publicar/PLC8.png)
+*Figura 7:* Proceso de descarga del programa Ladder al PLC desde CCW.
+
+## 6. Ejecución de la interfaz web para el control de la lámpara del PLC mediante pyhton
 
 Finalmente, una vez que el PLC ha sido programado, desde la computadora conectada al PLC mediante Ethernet se debe ejecutar el programa main.py, mostrado a continuación.
 
@@ -174,14 +194,14 @@ if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000, debug=False)
 ```
 
-Al hacerlo, se desplegará una interfaz como la presentada en la Figura 6.
+Al hacerlo, se desplegará una interfaz como la presentada en la Figura 9.
 
 Posteriormente, si otro dispositivo se conecta a la misma red y utiliza la URL mostrada en esa misma figura, podrá acceder al panel de control web. A través de esta interfaz, será posible encender y apagar la lámpara conectada al PLC.
 
-![PLC6](assets/img/01-publicar/PLC6.png)
-*Figura 6:* Interfaz web para el control de encendido y apagado de la lámpara del PLC.
+![PLC9](assets/img/01-publicar/PLC6.png)
+*Figura 9:* Interfaz web para el control de encendido y apagado de la lámpara del PLC.
 
-## 6. Resultados
+## 7. Resultados
 
 A continuación, se presenta el video en el que se muestra el funcionamiento de la práctica:
 
