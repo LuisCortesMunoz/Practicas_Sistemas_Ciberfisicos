@@ -35,8 +35,139 @@ Posteriormente, en la configuración de Ethernet, se debe habilitar el mapeado M
 ![PLC3](assets/img/01-publicar/PLC3.png)
 *Figura 3:* Habilitación del mapeado Modbus en la configuración Ethernet del PLC.
 
-## 4.
+## 4. Creación del programa en lenguaje escalera para el control de una lámpara
+
+Como tercer paso, se debe crear el programa en lenguaje escalera (Ladder Diagram). En este caso, se desarrolló un programa sencillo para accionar una lámpara del PLC mediante un botón ubicado en una interfaz web.
+
+Primero, como se muestra en la Figura 4, se debe dar clic derecho en la opción “Programas”, después seleccionar “Agregar” y, por último, “Nuevo LD: Diagrama en escalera”. 
+
+![PLC4](assets/img/01-publicar/PLC4.png)
+*Figura 4:* Creación de un nuevo programa Ladder en CCW.
+
+Con esto, el software redireccionará a la pestaña mostrada en la Figura 5, donde se puede crear el programa que se desea implementar.
+
+En esta práctica, se realizó una lógica simple en la que, cuando la variable de entrada —creada previamente en el mapeado Modbus— es igual a 1, se activa la salida 2, la cual está conectada a la lámpara en el panel de control.
+
+![PLC5](assets/img/01-publicar/PLC5.png)
+*Figura 5:* Diseño del programa en lenguaje escalera para el control de la lámpara.
+
+Finalmente, se muestra a continuación la carpeta que contiene el programa completo con toda la configuración descrita, para su descarga.
 
 [Descargar programa escalera]({{site.baseurl }}/assets/files/practicaPLC.zip)
 
 ## 5.
+
+### 1.1) app.py
+
+```python
+# Step 1: Import libraries
+from flask import Flask, request, render_template_string
+from pymodbus.client import ModbusTcpClient
+
+# Step 2: PLC configuration
+PLC_IP = "192.168.3.152"
+PLC_PORT = 502
+REGISTER_ADDRESS = 0
+
+# Step 3: Create Flask app
+app = Flask(__name__)
+
+# Step 4: Function to write to PLC
+def write_value(val):
+    client = ModbusTcpClient(PLC_IP, port=PLC_PORT)
+
+    try:
+        if client.connect():
+            result = client.write_register(REGISTER_ADDRESS, val)
+
+            if result.isError():
+                return False, f"Error Modbus: {result}"
+
+            return True, f"Registro escrito con valor {val}"
+        else:
+            return False, "No se pudo conectar al PLC"
+
+    except Exception as e:
+        return False, f"Excepción: {e}"
+
+    finally:
+        client.close()
+
+# Step 5: Web page
+HTML_PAGE = """
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>PLC LED Control</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 60px;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            margin-bottom: 30px;
+        }
+        button {
+            width: 180px;
+            height: 60px;
+            font-size: 20px;
+            margin: 10px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        .on {
+            background-color: green;
+            color: white;
+        }
+        .off {
+            background-color: red;
+            color: white;
+        }
+        .msg {
+            margin-top: 25px;
+            font-size: 18px;
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <h1>Control Web del PLC</h1>
+
+    <form action="/on" method="post">
+        <button class="on" type="submit">Turn ON</button>
+    </form>
+
+    <form action="/off" method="post">
+        <button class="off" type="submit">Turn OFF</button>
+    </form>
+
+    <div class="msg">{{ message }}</div>
+</body>
+</html>
+"""
+
+# Step 6: Main page
+@app.route("/", methods=["GET"])
+def home():
+    return render_template_string(HTML_PAGE, message="Listo para controlar el PLC")
+
+# Step 7: Route to turn ON
+@app.route("/on", methods=["POST"])
+def turn_on():
+    ok, msg = write_value(1)
+    return render_template_string(HTML_PAGE, message=msg)
+
+# Step 8: Route to turn OFF
+@app.route("/off", methods=["POST"])
+def turn_off():
+    ok, msg = write_value(0)
+    return render_template_string(HTML_PAGE, message=msg)
+
+# Step 9: Run server
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=5000, debug=False)
+```
