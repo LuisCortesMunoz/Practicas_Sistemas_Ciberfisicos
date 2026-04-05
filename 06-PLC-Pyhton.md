@@ -196,10 +196,10 @@ if __name__ == "__main__":
 
 Al hacerlo, se desplegará una interfaz como la presentada en la Figura 9.
 
-Posteriormente, si otro dispositivo se conecta a la misma red y utiliza la URL mostrada en esa misma figura, podrá acceder al panel de control web. A través de esta interfaz, será posible encender y apagar la lámpara conectada al PLC.
-
 ![PLC9](assets/img/01-publicar/PLC6.png)
 *Figura 9:* Interfaz web para el control de encendido y apagado de la lámpara del PLC.
+
+Posteriormente, si otro dispositivo se conecta a la misma red y utiliza la URL mostrada en esa misma figura, podrá acceder al panel de control web. A través de esta interfaz, será posible encender y apagar la lámpara conectada al PLC.
 
 ## 7. Resultados
 
