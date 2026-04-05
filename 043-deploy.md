@@ -344,9 +344,9 @@ Primero, como ya se explicó, los archivos del frontend se encargan de construir
 
 ### Frontend: Carpeta con los archivos HTML + CSS + JS
 
-[Descargar códigos Frontend]({{site.baseurl }}/assets/files/tiraLeds.zip)
+[Descargar códigos Frontend]({{site.baseurl }}/assets/files/tiraLeds-main.zip)
 
-### 3.2) Publicación del frontend en GitHub Pages
+### 3.2) Publicación del frontend en GitHub Pages 
 
 Posteriormente, se debe generar la liga pública del sitio utilizando GitHub Pages. Para ello, dentro del repositorio se selecciona el ícono de engrane Settings (parte superior) y, en el menú lateral izquierda, se ingresa a la sección Pages. Ahí se configura el despliegue seleccionando la rama Main y la carpeta Root, y finalmente se guarda la configuración, tal como se muestra en la Figura 4. Después, se regresa a la página principal del repositorio y, en el apartado About (lado derecho), se presiona el engrane para habilitar la opción “Use your GitHub Pages website”. Con esto, la liga del sitio web queda disponible para acceder a la interfaz de control desde el navegador.
 
