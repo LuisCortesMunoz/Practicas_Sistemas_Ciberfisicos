@@ -37,4 +37,6 @@ Posteriormente, en la configuración de Ethernet, se debe habilitar el mapeado M
 
 ## 4.
 
+[Descargar programa escalera]({{site.baseurl }}/assets/files/practicaPLC.zip)
+
 ## 5.
