@@ -55,7 +55,9 @@ Finalmente, se muestra a continuación la carpeta que contiene el programa compl
 
 [Descargar programa escalera]({{site.baseurl }}/assets/files/practicaPLC.zip)
 
-## 5.
+## 5. Ejecución de la interfaz web para el control de la lámpara del PLC mediante pyhton
+
+Finalmente, una vez que el PLC ha sido programado, desde la computadora conectada al PLC mediante Ethernet se debe ejecutar el programa main.py, mostrado a continuación.
 
 ### main.py
 
@@ -171,3 +173,19 @@ def turn_off():
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000, debug=False)
 ```
+
+Al hacerlo, se desplegará una interfaz como la presentada en la Figura 6.
+
+Posteriormente, si otro dispositivo se conecta a la misma red y utiliza la URL mostrada en esa misma figura, podrá acceder al panel de control web. A través de esta interfaz, será posible encender y apagar la lámpara conectada al PLC.
+
+![PLC6](assets/img/01-publicar/PLC6.png)
+*Figura 6:* Interfaz web para el control de encendido y apagado de la lámpara del PLC.
+
+## 6. Resultados
+
+A continuación, se presenta el video en el que se muestra el funcionamiento de la práctica:
+
+<video controls width="720">
+  <source src="{{ '/assets/videos/plcVideo.mp4' | relative_url }}" type="video/mp4">
+  Tu navegador no soporta video HTML5.
+</video>
