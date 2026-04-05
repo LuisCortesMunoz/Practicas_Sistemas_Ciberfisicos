@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Proyecto Final
-nav_order: 6
+nav_order: 8
 has_children: true
 permalink: /proy-final/
 ---
