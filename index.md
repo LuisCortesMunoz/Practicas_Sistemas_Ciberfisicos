@@ -4,21 +4,19 @@ title: Inicio
 nav_order: 1
 ---
 
-# Plantilla de documentación con Just the Docs
+# Prácticas Primavera 2026: Sistemas Ciberfísicos
 
-Este repositorio está diseñado para entender como utilizar la plantilla de repositorio que utiliza **"Just the docs"** de Jekyll y el lenguaje **"Markdown"**:
+Este repositorio será nuestra página del curso: aquí se documentan todas las prácticas realizadas en la materia de Sistemas Ciberfísicos, incluyendo el desarrollo, la metodología y las evidencias de los resultados obtenidos durante el semestre de primavera 2026.
 
-1. **Crear y publicar** el sitio en GitHub Pages.
-2. Aprender la **estructura** típica de un repo de documentación.
-3. Dominar **Markdown** (texto, listas, tablas, código).
-4. Configurar la **navegación** (sidebar, secciones, orden).
-5. Agregar **imágenes, videos** y otros recursos.
-6. Ajustar **estilos** (logo, colores, footer).
+Integrantes del Equipo:
 
+**Luis Cortés Muñoz:** Estudiante de décimo semestre de Ingeniería en Mecatrónica y Sistemas Ciberfísicos en la Universidad Iberoamericana. Actualmente trabajo en PepsiCo en el área de Cadena de Suministro, específicamente en Planeación.
 
 Contenido:
-- [1. Publicar en GitHub Pages](01-publicar-en-github-pages.md)
-- [2. Estructura del repositorio](02-estructura-del-repo.md)
-- [3. Escribir en Markdown](03-markdown.md)
-- [4. Personalización visual](04-estilos.md)
-
+- [1. Equipo de computo con presupuesto](01-equipo-de-computo.md)
+- [2. Sistemas Embebidos](02-sistemas-embebidos.md)
+- [3. Interfaz de Usuario](03-envio-datos-usb-bluetooth.md)
+- [4. Servicio Web](04-servicios-web.md)
+- [5. Servicios de almacenamiento en la nube](05-Base-Datos.md)
+- [6. PLC con Python](06-PLC-Pyhton.md)
+- [7. Proyecto Final](05-Proyecto-Final.md)
