@@ -4,21 +4,6 @@ title: Servicios de almacenamiento en la nube
 nav_order: 6
 ---
 
-Claro, aquí tienes nuevamente el archivo completo en **Markdown para Just the Docs**, ya incluyendo la parte de la evidencia en Firebase con la explicación de que sí se guardó el evento.
-
-Puedes guardarlo como:
-
-```text
-esp32-flask-firebase.md
-```
-
-````markdown
----
-layout: default
-title: ESP32 con botón, Flask y Firebase
-parent: Prácticas
-nav_order: 1
----
 
 # ESP32 con botón, servidor Flask y Firebase
 
