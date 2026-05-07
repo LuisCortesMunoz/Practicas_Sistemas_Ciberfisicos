@@ -12,6 +12,9 @@ Integrantes del Equipo:
 
 **Luis Cortés Muñoz:** Estudiante de décimo semestre de Ingeniería en Mecatrónica y Sistemas Ciberfísicos en la Universidad Iberoamericana. Actualmente trabajo en PepsiCo en el área de Cadena de Suministro, específicamente en Planeación.
 
+**Emanuel Iturbe:** Estudiante de décimo semestre de Ingeniería en Mecatrónica y Sistemas Ciberfísicos en la Universidad Iberoamericana. Cuenta con experiencia académica en proyectos de robótica, automatización, programación, sistemas embebidos, IoT, visión por computadora e integración de hardware y software. Actualmente forma parte de un equipo que competirá en Francia en un concurso internacional de vehículos autónomos, donde se desarrollan soluciones de percepción, control y navegación para un vehículo inteligente. Se interesa por crear sistemas tecnológicos aplicados a problemas reales de ingeniería, especialmente en áreas como robótica, automatización y movilidad autónoma.
+
+
 Contenido:
 - [1. Equipo de computo con presupuesto](01-equipo-de-computo.md)
 - [2. Sistemas Embebidos](02-sistemas-embebidos.md)
