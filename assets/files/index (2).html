@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>WS2812 Control - FrontEnd</title>
+  <link rel="stylesheet" href="./styles.css"/>
+</head>
+<body>
+  <header class="top">
+    <div>
+      <h1>WS2812 RGB Control</h1>
+      <p class="sub">FrontEnd (PC A) → BackEnd (PC B) → ESP32 → WS2812</p>
+    </div>
+    <div class="badge" id="status">Conectando…</div>
+  </header>
+
+  <main class="grid">
+    <section class="card">
+      <h2>Control</h2>
+
+      <label class="label">Color</label>
+      <div class="color-container">
+        <div class="color-circle">
+          <input type="color" id="colorPicker" value="#ff0000"/>
+          <div class="color-preview" id="colorPreview"></div>
+        </div>
+        <input type="text" id="colorHex" value="#ff0000" maxlength="7"/>
+      </div>
+
+      <div class="color-palette">
+        <div class="swatch" data-color="#ff0000" style="background:#ff0000"></div>
+        <div class="swatch" data-color="#ff7a00" style="background:#ff7a00"></div>
+        <div class="swatch" data-color="#ffff00" style="background:#ffff00"></div>
+        <div class="swatch" data-color="#00ff00" style="background:#00ff00"></div>
+        <div class="swatch" data-color="#00ffff" style="background:#00ffff"></div>
+        <div class="swatch" data-color="#0000ff" style="background:#0000ff"></div>
+        <div class="swatch" data-color="#ff00ff" style="background:#ff00ff"></div>
+        <div class="swatch" data-color="#ffffff" style="background:#ffffff"></div>
+      </div>
+
+      <label class="label">Cantidad de LEDs encendidos</label>
+      <input type="range" id="countRange" min="0" max="8" value="8"/>
+      <div class="row space-between">
+        <span class="muted">0</span>
+        <strong id="countValue">8</strong>
+        <span class="muted" id="countMaxLabel">8</span>
+      </div>
+
+      <div class="row">
+        <button class="btn primary" id="btnSend">Enviar</button>
+        <button class="btn" id="btnRefresh">Refrescar</button>
+      </div>
+
+      <p class="hint" id="msg"></p>
+    </section>
+
+    <section class="card">
+      <h2>Vista previa / Log</h2>
+      <div class="preview">
+        <div class="dot" id="dot"></div>
+        <div class="pill">
+          <span>Último estado</span>
+          <strong id="stateText">—</strong>
+        </div>
+      </div>
+      <div class="log" id="log"></div>
+    </section>
+  </main>
+
+  <script src="./app.js"></script>
+</body>
+</html>
